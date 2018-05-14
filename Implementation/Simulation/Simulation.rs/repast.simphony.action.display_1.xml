@@ -3,30 +3,14 @@
   <type>2D</type>
   <styles>
     <entry>
-      <string>simulation.Pregnant</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
-    </entry>
-    <entry>
-      <string>simulation.Male</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
-    </entry>
-    <entry>
-      <string>simulation.Female</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>simulation.TasmanianDevil</string>
+      <string>simulation.simulationVisualizer</string>
     </entry>
   </styles>
   <editedStyles>
     <entry>
-      <string>simulation.Pregnant</string>
-      <string>simulation.Pregnant.style_0.xml</string>
-    </entry>
-    <entry>
-      <string>simulation.Male</string>
-      <string>simulation.Male.style_0.xml</string>
-    </entry>
-    <entry>
-      <string>simulation.Female</string>
-      <string>simulation.Female.style_0.xml</string>
+      <string>simulation.TasmanianDevil</string>
+      <null/>
     </entry>
   </editedStyles>
   <netStyles/>
@@ -39,23 +23,15 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>749315791</hashCode>
+    <hashCode>-1943455246</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
-  <layoutProjection>space</layoutProjection>
+  <layoutProjection>grid</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
     <entry>
-      <string>simulation.Pregnant</string>
+      <string>simulation.TasmanianDevil</string>
       <int>0</int>
-    </entry>
-    <entry>
-      <string>simulation.Male</string>
-      <int>1</int>
-    </entry>
-    <entry>
-      <string>simulation.Female</string>
-      <int>2</int>
     </entry>
   </layerOrder>
   <projections>
@@ -92,7 +68,7 @@
               </entry>
               <entry>
                 <string>SHOW</string>
-                <boolean>true</boolean>
+                <boolean>false</boolean>
               </entry>
             </map>
           </entry>

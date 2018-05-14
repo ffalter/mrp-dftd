@@ -18,12 +18,12 @@ import repast.simphony.context.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Male {
+public class MaleOld {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	private boolean moved;
 	
-	public Male(ContinuousSpace<Object> space, Grid<Object> grid) {
+	public MaleOld(ContinuousSpace<Object> space, Grid<Object> grid) {
 		this.space = space;
 		this.grid = grid;
 	}
@@ -32,13 +32,13 @@ public class Male {
 	public void step() {
 		GridPoint pt = grid.getLocation(this);
 		
-		GridCellNgh <Female> nghCreator = new GridCellNgh<Female>(grid,pt,Female.class,4,4);
-		List<GridCell<Female>> gridCells = nghCreator.getNeighborhood(true);
+		GridCellNgh <FemaleOld> nghCreator = new GridCellNgh<FemaleOld>(grid,pt,FemaleOld.class,4,4);
+		List<GridCell<FemaleOld>> gridCells = nghCreator.getNeighborhood(true);
 		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
 		
 		GridPoint pointWithMostFemales = null;
 		int maxCount = -1;
-		for(GridCell<Female> cell : gridCells) {
+		for(GridCell<FemaleOld> cell : gridCells) {
 			if(cell.size() > maxCount) {
 				pointWithMostFemales = cell.getPoint();
 				maxCount = cell.size();

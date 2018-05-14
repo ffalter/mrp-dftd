@@ -20,24 +20,24 @@ import repast.simphony.util.ContextUtils;
 import repast.simphony.util.SimUtilities;
 
 
-public class Pregnant {
+public class PregnantOld {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	int birth = 0;
 	boolean done = false;
 	
-	public Pregnant(ContinuousSpace<Object> space, Grid<Object> grid) {
+	public PregnantOld(ContinuousSpace<Object> space, Grid<Object> grid) {
 		this.space = space;
 		this.grid = grid;
 	}
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
 	public void run() {
 		GridPoint pt = grid.getLocation(this);
-		GridCellNgh<Male> nghCreator = new GridCellNgh<Male>(grid, pt,Male.class , 4, 4);
-		List<GridCell<Male>> gridCells = nghCreator.getNeighborhood(true); 
+		GridCellNgh<MaleOld> nghCreator = new GridCellNgh<MaleOld>(grid, pt,MaleOld.class , 4, 4);
+		List<GridCell<MaleOld>> gridCells = nghCreator.getNeighborhood(true); 
 		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
 		GridPoint pointWithMostSafe = null; int minCount = Integer.MAX_VALUE;
-		for(GridCell<Male> cell: gridCells) {
+		for(GridCell<MaleOld> cell: gridCells) {
 			if(cell.size() < minCount) {
 				pointWithMostSafe = cell.getPoint();
 				minCount = cell.size();
@@ -81,19 +81,19 @@ public class Pregnant {
 			Random rand = new Random();
 			int x = rand.nextInt(10);
 			if(x>=3) {
-				Female female = new Female(space, grid);
+				FemaleOld female = new FemaleOld(space, grid);
 				context.add(female);
 				space.moveTo(female, spacePt.getX(),spacePt.getY());
 				grid.moveTo(female, pt.getX(),pt.getY());
 			}
 			else {
-				Male male = new Male(space, grid);
+				MaleOld male = new MaleOld(space, grid);
 				context.add(male);
 				space.moveTo(male, spacePt.getX(),spacePt.getY());
 				grid.moveTo(male, pt.getX(),pt.getY());
 			}
 			
-			Female fem = new Female(space, grid);
+			FemaleOld fem = new FemaleOld(space, grid);
 			context.add(fem);
 			space.moveTo(fem, spacePt.getX(),spacePt.getY());
 			grid.moveTo(fem, pt.getX(),pt.getY());

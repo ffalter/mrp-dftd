@@ -18,12 +18,12 @@ import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
 import repast.simphony.util.SimUtilities;
 
-public class Female {
+public class FemaleOld {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	private boolean pregnant = false;
 	
-	public Female(ContinuousSpace<Object> space, Grid<Object> grid) {
+	public FemaleOld(ContinuousSpace<Object> space, Grid<Object> grid) {
 		this.space = space;
 		this.grid = grid;
 	}
@@ -32,10 +32,10 @@ public class Female {
 	
 	public void run() {
 		GridPoint pt = grid.getLocation(this);
-		GridCellNgh<Male> nghCreator = new GridCellNgh<Male>(grid, pt,Male.class , 1, 1);
-		List<GridCell<Male>> gridCells = nghCreator.getNeighborhood(true); SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
+		GridCellNgh<MaleOld> nghCreator = new GridCellNgh<MaleOld>(grid, pt,MaleOld.class , 1, 1);
+		List<GridCell<MaleOld>> gridCells = nghCreator.getNeighborhood(true); SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
 		GridPoint pointWithMostMales = null; int maxCount = -1;
-		for(GridCell<Male> cell: gridCells) {
+		for(GridCell<MaleOld> cell: gridCells) {
 			if(cell.size() > maxCount) {
 				pointWithMostMales = cell.getPoint();
 				maxCount = cell.size();
@@ -69,11 +69,12 @@ public class Female {
 			}
 		}
 	}
+	
 	public void pregnant() {
 		GridPoint pt = grid.getLocation(this);
 		List<Object> females = new ArrayList<Object>();
 		for(Object obj : grid.getObjectsAt(pt.getX(),pt.getY())) {
-			if(obj instanceof Female) {
+			if(obj instanceof FemaleOld) {
 				females.add(obj);
 			}
 		}
@@ -83,7 +84,7 @@ public class Female {
 			NdPoint spacePt = space.getLocation(obj);
 			Context<Object> context = ContextUtils.getContext(obj);
 			context.remove(obj);
-			Pregnant preg = new Pregnant(space, grid);
+			PregnantOld preg = new PregnantOld(space, grid);
 			context.add(preg);
 			space.moveTo(preg, spacePt.getX(),spacePt.getY());
 			grid.moveTo(preg, pt.getX(),pt.getY());

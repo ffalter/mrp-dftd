@@ -12,7 +12,6 @@ import repast.simphony.random.RandomHelper;
 import repast.simphony.space.SpatialMath;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
-import repast.simphony.space.graph.Network;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.ContextUtils;
@@ -31,6 +30,7 @@ public class FemaleOld {
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
 	
 	public void run() {
+		System.out.println("Step OLD FEMALE.");
 		GridPoint pt = grid.getLocation(this);
 		GridCellNgh<MaleOld> nghCreator = new GridCellNgh<MaleOld>(grid, pt,MaleOld.class , 1, 1);
 		List<GridCell<MaleOld>> gridCells = nghCreator.getNeighborhood(true); SimUtilities.shuffle(gridCells, RandomHelper.getUniform());

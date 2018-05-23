@@ -7,6 +7,8 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
 import repast.simphony.space.continuous.RandomCartesianAdder;
@@ -19,6 +21,10 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 	@Override
 	public Context<Object> build(Context<Object> context) {
+		final Parameters params = RunEnvironment.getInstance().getParameters();
+		final double birthrate = (Double) params.getValue("Birthrate");
+		System.out.println("The configured birthrate is "+birthrate+".");
+		
 		NetworkBuilder<Object> netBuilder = new NetworkBuilder<Object>("infection network", context,true);
 		netBuilder.buildNetwork();
 		context.setId("simulation");
@@ -48,7 +54,6 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			NdPoint pt = space.getLocation(obj);
 			grid.moveTo(obj, (int)pt.getX(),(int)pt.getY());
 		}
-		
 		
 		return context;
 	}

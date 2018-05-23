@@ -19,11 +19,11 @@ public class simulationVisualizer extends DefaultStyleOGL2D {
 	 */
 	@Override
 	public VSpatial getVSpatial(Object agent, VSpatial spatial) {
-		return ((TasmanianDevil) agent).currentState.getSpatialVisualisation(shapeFactory);
+		return ((TasmanianDevil) agent).getCurrentState().getSpatialVisualisation(shapeFactory);
 	}
 
 	@Override
 	public Color getColor(Object agent) {
-		return ((TasmanianDevil) agent).currentState.getColor();
+		return ((TasmanianDevil) agent).getCurrentState().getColor();
 	}
 }

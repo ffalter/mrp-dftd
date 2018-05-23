@@ -30,6 +30,7 @@ public class MaleOld {
 	
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
 	public void step() {
+		System.out.println("Step OLD MALE.");
 		GridPoint pt = grid.getLocation(this);
 		
 		GridCellNgh <FemaleOld> nghCreator = new GridCellNgh<FemaleOld>(grid,pt,FemaleOld.class,4,4);

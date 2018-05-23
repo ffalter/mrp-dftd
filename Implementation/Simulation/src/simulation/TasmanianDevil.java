@@ -18,14 +18,13 @@ public class TasmanianDevil {
 	Grid<Object> grid;
 	
 	/** The number of ticks the agent is alive.*/
-	int age;
+	private int age;
 	
 	/** The number of ticks after the agent gets infected.*/
-	int sick;
+	private int sick;
 	
-	/** The current state of the agent.*/
-	AbstractState currentState;
-	
+	/** The current state of the agent. Should only be set via StateManager.*/
+	private AbstractState currentState;
 
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState) {
 		this.space = space;
@@ -39,12 +38,35 @@ public class TasmanianDevil {
 	 * This function will be called from the repast-framework.
 	 * @throws Exception 
 	 */
+	
+	
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
-	void step() throws Exception
+	public void run() throws Exception
 	{
+		System.out.println("Step: " + currentState.getClass().getName());
 		if(currentState == null)
 			throw new Exception("There is no state defined for this agent! Step cannot be evaluated");
 		currentState.step(this);
 		StateManager.getState(this);
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void incrementAge(int ticks) {
+		age += ticks;
+	}
+
+	public int getSick() {
+		return sick;
+	}
+
+	public void incrementSick(int ticks) {
+		ticks += ticks;
+	}
+	
+	public AbstractState getCurrentState() {
+		return currentState;
 	}
 }

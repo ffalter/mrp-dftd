@@ -1,63 +1,57 @@
 package simulation;
 
+import java.awt.Color;
+import java.util.List;
 
-import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.grid.GridCell;
 import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.random.RandomHelper;
-import repast.simphony.space.SpatialMath;
-import repast.simphony.space.continuous.ContinuousSpace;
-import repast.simphony.space.continuous.NdPoint;
-import repast.simphony.space.graph.Network;
-import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
-import repast.simphony.util.ContextUtils;
 import repast.simphony.util.SimUtilities;
-import repast.simphony.context.Context;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MaleOld {
-	private ContinuousSpace<Object> space;
-	private Grid<Object> grid;
-	private boolean moved;
+public class MaleOld extends AbstractState{
 	
-	public MaleOld(ContinuousSpace<Object> space, Grid<Object> grid) {
-		this.space = space;
-		this.grid = grid;
+	@Override
+	public Color getColor() {
+		return Color.GREEN;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
-	public void step() {
-		System.out.println("Step OLD MALE.");
-		GridPoint pt = grid.getLocation(this);
-		
-		GridCellNgh <FemaleOld> nghCreator = new GridCellNgh<FemaleOld>(grid,pt,FemaleOld.class,4,4);
-		List<GridCell<FemaleOld>> gridCells = nghCreator.getNeighborhood(true);
+	@Override
+	public void step(TasmanianDevil devil) {
+		GridPoint pt = devil.grid.getLocation(devil);
+		GridCellNgh <TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.grid,pt,TasmanianDevil.class, 4, 4);
+		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
 		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
 		
 		GridPoint pointWithMostFemales = null;
 		int maxCount = -1;
-		for(GridCell<FemaleOld> cell : gridCells) {
-			if(cell.size() > maxCount) {
+		for(GridCell<TasmanianDevil> cell : gridCells) {
+			int numOfFemales=0;
+			for(TasmanianDevil tmpDevil: cell.items())
+			{
+				if(tmpDevil.getCurrentState().isFemaleState())
+					numOfFemales++;
+			}
+			if(numOfFemales > maxCount) {
 				pointWithMostFemales = cell.getPoint();
 				maxCount = cell.size();
 			}
 		}
-		moveTowards(pointWithMostFemales);
+		moveTowards(devil, pointWithMostFemales, maxCount);
+		doMainStep(devil);
+		
+	}
+
+	
+	@Override
+	public boolean isSickState() {
+		return false;
 	}
 	
-	public void moveTowards(GridPoint pt) {
-		
-		if(!pt.equals(grid.getLocation(this) )) {
-			NdPoint myPoint = space.getLocation(this);
-			NdPoint otherPoint = new NdPoint(pt.getX(), pt.getY()); double angle = SpatialMath.calcAngleFor2DMovement(space,
-			myPoint , otherPoint );
-			space.moveByVector(this, 0.5, angle, 0);
-			myPoint = space.getLocation(this);
-			grid.moveTo(this, (int)myPoint.getX(), (int)myPoint.getY());
-		}
+	@Override
+	public boolean isFemaleState()
+	{
+		return false;
 	}
 }
 

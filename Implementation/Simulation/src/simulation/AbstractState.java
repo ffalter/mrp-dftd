@@ -1,6 +1,7 @@
 package simulation;
 
 import java.awt.Color;
+import java.util.Random;
 
 import repast.simphony.space.SpatialMath;
 import repast.simphony.space.continuous.ContinuousSpace;
@@ -75,7 +76,7 @@ public abstract class AbstractState {
 			devil.incrementSick(1);		
 	}
 	
-	public void moveTowards(TasmanianDevil devil, GridPoint pt) {
+	public void moveTowards(TasmanianDevil devil, GridPoint pt, int maxCount) {
 		Grid<Object> grid = devil.grid;
 		ContinuousSpace<Object> space = devil.space;
 		if(!pt.equals(grid.getLocation(devil) )) {
@@ -86,6 +87,14 @@ public abstract class AbstractState {
 			myPoint = space.getLocation(devil);
 			grid.moveTo(devil, (int)myPoint.getX(), (int)myPoint.getY());
 		}
+		/*
+		if(pt.equals(grid.getLocation(this)) && maxCount != 0) {
+			Random rand = new Random();
+			int x = rand.nextInt(10);
+			if(x >5) {
+				this.isSickState() = true;
+			}
+		}*/
 	}
 
 	

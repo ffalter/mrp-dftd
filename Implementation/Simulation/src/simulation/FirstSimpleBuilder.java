@@ -40,14 +40,14 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		int maleCount = 15;
 		for(int i = 0; i < maleCount; i++  ) {
 			context.add(new TasmanianDevil(space, grid, new MaleSickState()));
-			//context.add(new MaleOld(space,grid));
+			context.add(new TasmanianDevil(space,grid, new MaleOld()));
 		}
 		
 		//add female individuals
 		int femaleCount = 10;
 		for(int i = 0; i < femaleCount; i++) {
 			context.add(new TasmanianDevil(space, grid, new FemaleSickState()));
-			//context.add(new FemaleOld(space,grid));
+			context.add(new TasmanianDevil(space,grid, new FemaleOld()));
 		}
 		
 		for(Object obj:context) {

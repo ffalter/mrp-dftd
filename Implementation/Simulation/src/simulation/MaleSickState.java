@@ -38,7 +38,7 @@ public class MaleSickState extends AbstractState {
 				maxCount = cell.size();
 			}
 		}
-		moveTowards(devil, pointWithMostFemales);
+		moveTowards(devil, pointWithMostFemales, 0);
 	}
 
 	@Override

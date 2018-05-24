@@ -48,7 +48,7 @@ public class PregnantOld {
 		moveTowards(pointWithMostSafe);
 		birth++;
 		if(birth>20) {
-			birth();
+			//birth();
 		}
 		
 	
@@ -66,7 +66,7 @@ public class PregnantOld {
 			grid.moveTo(this, (int)myPoint.getX(), (int)myPoint.getY());
 		}
 		
-	}
+	}/*
 	public void birth() {
 		GridPoint pt = grid.getLocation(this);
 		List<Object> pregs = new ArrayList<Object>();
@@ -100,5 +100,5 @@ public class PregnantOld {
 
 		}
 	}
-	
+	*/
 }

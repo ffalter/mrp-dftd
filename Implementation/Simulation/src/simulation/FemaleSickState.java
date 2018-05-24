@@ -21,7 +21,7 @@ public class FemaleSickState extends AbstractState {
 	public void step(TasmanianDevil devil) {
 		Grid<Object> grid = devil.grid;
 		GridPoint pt = grid.getLocation(devil);
-		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(grid, pt,TasmanianDevil.class , 1, 1);
+		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(grid, pt,TasmanianDevil.class , 4, 4);
 		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true); SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
 		GridPoint pointWithMostMales = null;
 		int maxCount = -1;
@@ -38,7 +38,8 @@ public class FemaleSickState extends AbstractState {
 			}
 		}		
 		
-		moveTowards(devil, pointWithMostMales);
+		moveTowards(devil, pointWithMostMales, 0);
+		doMainStep(devil);
 		// this should be implemented in another state like: femalePregnantState
 		//if(pregnant) {
 		//	pregnant();

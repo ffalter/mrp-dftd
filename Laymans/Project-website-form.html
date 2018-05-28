@@ -43,14 +43,20 @@ To create a realistic simulation of the real-life scenario, our approach is to t
 The mathematical models are used to gain an understanding into the dynamics of a population as well as the behaviour of the tasmanian devils. Understanding these models will be of use when making an agent-based version.
 
 <h5>SEI-Models</h5>
-SEI-Models (Susceptible-Exposed-Infected) use ordinary differential equations (ODEs) to model transitions between different states depending on other states. So in the case of the SEI-model, the states are susceptible, exposed and infected. For example The transition of individuals from the susceptible to to the exposed state depend on the number of individuals in the susceptible state as well as the number of individuals in the infected and exposed states. We will use the idea of transition probabilities depending on different states to implement the agent based model. ---include image ???---
+SEI-Models (Susceptible-Exposed-Infected) use ordinary differential equations (ODEs) to model transitions between different states depending on other states. So in the case of the SEI-model, the states are susceptible, exposed and infected. For example The transition of individuals from the susceptible to to the exposed state depend on the number of individuals in the susceptible state as well as the number of individuals in the infected and exposed states. We will use the idea of transition probabilities depending on different states to implement the agent based model.
+<div style="width:50%;" >
+<figure>
+    <img style="text-align: center;width:40%" src="images/2018_Falter_img_4.png" alt=""/>
+    <figcaption>Fig 2. - SEI Model</figcaption>
+</figure>
+</div>
 
 <h5>Leslie Matrices</h5>
 To model the changes in the population we use the concept of Leslie Matrices. In our case it contains the birth- and death-rates. This matrix will then be a representation of how many individuals in a population are in a certain “age-group” and how many of the individuals make it through the different generations.
-<div style="width:50%;" >
+<div style="width:45%;" >
 <figure>
     <img style="text-align: center;width:40%" src="images/2018_Falter_img_2.png" alt=""/>
-    <figcaption>Fig 2. - Leslie Matrix<br>
+    <figcaption>Fig 3. - Leslie Matrix<br>
     <small>Source: https://en.wikipedia.org/wiki/Leslie_matrix</small></figcaption>
 </figure>
 </div>
@@ -60,11 +66,17 @@ This is a matrix that models what happens when different members of a population
 <div style="width:70%;" >
 <figure>
     <img style="text-align: center;width:40%" src="images/2018_Falter_img_3.png" alt=""/>
-    <figcaption>Fig 2. - Interaction Matrix<br></figcaption>
+    <figcaption>Fig 4. - Simple Example of an Interaction Matrix</figcaption>
 </figure>
 </div>
 <h4>Agent-based</h4>
 In an agent based implementation each individual in a population will move around and make decisions based on the information it has of the environment, these individuals are called agents. As more variables are added to the simulation, to both the agents and the environment, the simulation should become a better approximation of a how the Devils act in real life. We can then introduce a disease to the population, which has the same effects as the facial tumor disease that affects the Devils in real life. By doing this we can learn how the disease spreads through a population.
+<div style="width:50%;" >
+<figure>
+    <img style="text-align: center;width:80%" src="images/2018_Falter_img_5.png" alt=""/>
+    <figcaption>Fig 2. - SEI Model</figcaption>
+</figure>
+</div>
 <br>
 
 
@@ -72,7 +84,7 @@ In an agent based implementation each individual in a population will move aroun
 
 <h2 class="likesectionHead">Summary</h2>
 
-The main goal of the project is to gain insight into how the cancer spreads through a population of devils. By simulating a population of devils in which these cancers are present, it may be possible to predict the spreading of the cancers in real-life populations. This could help in finding ways to slow the disease's spread and possibly prevent further damage to populations of devils in the wild.<h4>References:</h4>
+The main goal of the project is to gain insight into how the cancer spreads through a population of devils. By simulating a population of devils in which these cancers are present, it may be possible to predict the spreading of the cancers in real-life populations. This could help in finding ways to slow the disease's spread and possibly prevent further damage to populations of devils in the wild.
 
 
 <h4>Downloads:</h4>

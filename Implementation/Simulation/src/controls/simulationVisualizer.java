@@ -1,9 +1,10 @@
-package simulation;
+package controls;
 
 import java.awt.Color;
 
 import repast.simphony.visualizationOGL2D.DefaultStyleOGL2D;
 import saf.v3d.scene.VSpatial;
+import simulation.TasmanianDevil;
 
 /**
  * simulationVisualizer makes it possible to vary the visualisation for each

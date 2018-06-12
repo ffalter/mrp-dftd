@@ -1,4 +1,4 @@
-package simulation;
+package states;
 
 import java.awt.Color;
 
@@ -9,6 +9,7 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import saf.v3d.ShapeFactory2D;
 import saf.v3d.scene.VSpatial;
+import simulation.TasmanianDevil;
 
 /**
  * As part of the StrategyPattern this is used to
@@ -76,8 +77,8 @@ public abstract class AbstractState {
 	}
 	
 	public void moveTowards(TasmanianDevil devil, GridPoint pt, int maxCount) {
-		Grid<Object> grid = devil.grid;
-		ContinuousSpace<Object> space = devil.space;
+		Grid<Object> grid = devil.getGrid();
+		ContinuousSpace<Object> space = devil.getSpace();
 		if(!pt.equals(grid.getLocation(devil) )) {
 			NdPoint myPoint = space.getLocation(devil);
 			NdPoint otherPoint = new NdPoint(pt.getX(), pt.getY()); double angle = SpatialMath.calcAngleFor2DMovement(space,

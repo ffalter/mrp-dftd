@@ -1,9 +1,11 @@
 package simulation;
 
+import controls.StateManager;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
+import states.AbstractState;
 
 /**
  * This class describes all attributes of an agent in the simulation.
@@ -13,10 +15,10 @@ import repast.simphony.space.grid.GridPoint;
  */
 public class TasmanianDevil {
 	/** This is the continuous space, the agents are interacting on.*/
-	ContinuousSpace<Object> space;
+	private ContinuousSpace<Object> space;
 	
 	/** This is the grid, the calculations will be based on.*/
-	Grid<Object> grid;
+	private Grid<Object> grid;
 	
 	/** The number of ticks the agent is alive.*/
 	private int age;
@@ -118,5 +120,15 @@ public class TasmanianDevil {
 
 	public AbstractState getCurrentState() {
 		return currentState;
+	}
+	
+	public Grid<Object> getGrid()
+	{
+		return this.grid;
+	}
+	
+	public ContinuousSpace<Object> getSpace()
+	{
+		return this.space;
 	}
 }

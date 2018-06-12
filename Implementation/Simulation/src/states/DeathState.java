@@ -1,6 +1,8 @@
-package simulation;
+package states;
 
 import java.awt.Color;
+
+import simulation.TasmanianDevil;
 
 public class DeathState extends AbstractState {
 

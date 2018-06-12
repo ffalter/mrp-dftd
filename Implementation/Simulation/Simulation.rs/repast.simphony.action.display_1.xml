@@ -4,7 +4,7 @@
   <styles>
     <entry>
       <string>simulation.TasmanianDevil</string>
-      <string>simulation.simulationVisualizer</string>
+      <string>controls.simulationVisualizer</string>
     </entry>
   </styles>
   <editedStyles>

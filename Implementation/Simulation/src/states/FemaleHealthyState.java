@@ -1,4 +1,4 @@
-package simulation;
+package states;
 
 import java.awt.Color;
 import java.util.List;
@@ -9,6 +9,7 @@ import repast.simphony.random.RandomHelper;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.SimUtilities;
+import simulation.TasmanianDevil;
 
 public class FemaleHealthyState extends AbstractState {
 
@@ -19,7 +20,7 @@ public class FemaleHealthyState extends AbstractState {
 	
 	@Override
 	public void step(TasmanianDevil devil) {
-		Grid<Object> grid = devil.grid;
+		Grid<Object> grid = devil.getGrid();
 		GridPoint pt = grid.getLocation(devil);
 		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(grid, pt,TasmanianDevil.class , 4, 4);
 		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true); SimUtilities.shuffle(gridCells, RandomHelper.getUniform());

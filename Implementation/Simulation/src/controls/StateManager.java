@@ -1,4 +1,7 @@
-package simulation;
+package controls;
+
+import simulation.TasmanianDevil;
+import states.AbstractState;
 
 /**
  * The StateManager will be used, to determine the state for the agent.
@@ -6,7 +9,7 @@ package simulation;
  *
  */
 public class StateManager {
-	static AbstractState getState(TasmanianDevil devil)
+	public static AbstractState getState(TasmanianDevil devil)
 	{
 		return null;
 	}

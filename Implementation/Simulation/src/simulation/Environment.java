@@ -7,7 +7,7 @@ public class Environment {
 	public  static double femaleRatio;
 	
 	public  static int steprange;
-	public  static int interactionRadius;
+	public  static Double interactionRadius;
 	
 	// probability of getting infected during interaction 
 	public static double infectionRate;

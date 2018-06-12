@@ -2,6 +2,7 @@ package states;
 
 import java.awt.Color;
 
+import repast.simphony.random.RandomHelper;
 import repast.simphony.space.SpatialMath;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
@@ -9,6 +10,7 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import saf.v3d.ShapeFactory2D;
 import saf.v3d.scene.VSpatial;
+import simulation.Environment;
 import simulation.TasmanianDevil;
 
 /**
@@ -74,6 +76,24 @@ public abstract class AbstractState {
 		//if devil is sick, increment ticks of sickness
 		if(isSickState())
 			devil.incrementSick(1);		
+	}
+	
+	/**
+	 * let the devil move to a random position within the steprange of its home. 
+	 * @param devil
+	 */
+	public void randomMove(TasmanianDevil devil) {
+		Grid<Object> grid = devil.getGrid();
+		ContinuousSpace<Object> space = devil.getSpace();
+		GridPoint home = devil.getHome();
+		space.moveTo(devil, home.getX(), home.getY());
+		// select random point within range
+		double angle = RandomHelper.nextDoubleFromTo(0, 2*Math.PI);
+		//TODO maybe add something like gaussian distribution for the final distance from the home
+		space.moveByVector(devil, RandomHelper.nextDoubleFromTo(0, Environment.getInstance().getSteprange()), angle,0);
+		NdPoint myPoint = space.getLocation(devil);
+		grid.moveTo(devil, (int) myPoint.getX(), (int) myPoint.getY());
+
 	}
 	
 	public void moveTowards(TasmanianDevil devil, GridPoint pt, int maxCount) {

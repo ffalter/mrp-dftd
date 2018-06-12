@@ -31,27 +31,29 @@ public class MaleSickState extends AbstractState {
 
 	@Override
 	public void step(TasmanianDevil devil) {
-		GridPoint pt = devil.getGrid().getLocation(devil);
-		
-		GridCellNgh <TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.getGrid(),pt,TasmanianDevil.class, 4, 4);
-		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
-		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
-		
-		GridPoint pointWithMostFemales = null;
-		int maxCount = -1;
-		for(GridCell<TasmanianDevil> cell : gridCells) {
-			int numOfFemales=0;
-			for(TasmanianDevil tmpDevil: cell.items())
-			{
-				if(tmpDevil.getCurrentState().isFemaleState())
-					numOfFemales++;
-			}
-			if(numOfFemales > maxCount) {
-				pointWithMostFemales = cell.getPoint();
-				maxCount = cell.size();
-			}
-		}
-		moveTowards(devil, pointWithMostFemales, 0);
+		randomMove(devil);
+		doMainStep(devil);
+//		GridPoint pt = devil.getGrid().getLocation(devil);
+//		
+//		GridCellNgh <TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.getGrid(),pt,TasmanianDevil.class, 4, 4);
+//		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
+//		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
+//		
+//		GridPoint pointWithMostFemales = null;
+//		int maxCount = -1;
+//		for(GridCell<TasmanianDevil> cell : gridCells) {
+//			int numOfFemales=0;
+//			for(TasmanianDevil tmpDevil: cell.items())
+//			{
+//				if(tmpDevil.getCurrentState().isFemaleState())
+//					numOfFemales++;
+//			}
+//			if(numOfFemales > maxCount) {
+//				pointWithMostFemales = cell.getPoint();
+//				maxCount = cell.size();
+//			}
+//		}
+//		moveTowards(devil, pointWithMostFemales, 0);
 	}
 
 	@Override

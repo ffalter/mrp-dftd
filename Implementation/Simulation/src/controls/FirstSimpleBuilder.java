@@ -43,7 +43,6 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
-			tmpDevil.setHome(grid.getLocation(this));
 		}
 
 		//add male healthy individuals
@@ -51,14 +50,12 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
 			context.add(tmpDevil);
-			tmpDevil.setHome(grid.getLocation(this));
 		}
 		//add male sick individuals
 		int femaleSickCount = 3;
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
-			tmpDevil.setHome(grid.getLocation(this));
 		}
 
 		//add male healthy individuals
@@ -66,12 +63,16 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);
-			tmpDevil.setHome(grid.getLocation(this));
 		}		
 		
 		for(Object obj:context) {
 			NdPoint pt = space.getLocation(obj);
 			grid.moveTo(obj, (int)pt.getX(),(int)pt.getY());
+		}
+		
+		for(Object obj : context.getObjects(TasmanianDevil.class)) {
+			TasmanianDevil devil = (TasmanianDevil)obj;
+			devil.setHome(grid.getLocation(devil));
 		}
 		
 		return context;

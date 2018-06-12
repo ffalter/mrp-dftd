@@ -14,7 +14,7 @@ public class FemaleSickState extends AbstractState {
 
 	@Override
 	public Color getColor() {
-		return Color.RED;
+		return Color.YELLOW;
 	}
 	
 	@Override
@@ -57,4 +57,14 @@ public class FemaleSickState extends AbstractState {
 		return true;
 	}
 
+	public boolean isInfectious(TasmanianDevil devil)
+	{
+		//TODO getSick returns sick - parse to days
+		if(devil.getSick() > 180)
+		{
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

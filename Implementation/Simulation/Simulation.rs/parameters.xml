@@ -82,12 +82,12 @@
 				   defaultValue="60"
 				   isReadOnly="false"
 				   converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-		</>
+		/>
 		<parameter name="matingSeasonEndDay" displayName="Mating Season End Day" type="int"
 				   defaultValue="91"
 				   isReadOnly="false"
 				   converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-		</>
+		/>
 		
 		</parameters>
 

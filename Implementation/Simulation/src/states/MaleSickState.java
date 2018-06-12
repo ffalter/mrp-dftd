@@ -3,6 +3,7 @@ package states;
 import java.awt.Color;
 import java.util.List;
 
+import controls.TickParser;
 import repast.simphony.query.space.grid.GridCell;
 import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.random.RandomHelper;
@@ -69,8 +70,7 @@ public class MaleSickState extends AbstractState {
 
 	public boolean isInfectiousDFT1(TasmanianDevil devil)
 	{
-		//TODO getSickDFT1 returns sick - parse to days
-		if(devil.getSickDFT1() > 180)
+		if(TickParser.getCompleteDaysFromTicks(devil.getSickDFT1()) > 180)
 		{
 			return true;
 		} else {
@@ -80,8 +80,7 @@ public class MaleSickState extends AbstractState {
 
 	public boolean isInfectiousDFT2(TasmanianDevil devil)
 	{
-		//TODO getSickDFT2 returns sick - parse to days
-		if(devil.getSickDFT2() > 180)
+		if(TickParser.getCompleteDaysFromTicks(devil.getSickDFT2()) > 180)
 		{
 			return true;
 		} else {

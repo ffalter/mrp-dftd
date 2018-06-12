@@ -63,7 +63,7 @@ public class TasmanianDevil {
 	}
 
 	public void incrementSick(int ticks) {
-		ticks += ticks;
+		sick += ticks;
 	}
 	
 	public AbstractState getCurrentState() {

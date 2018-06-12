@@ -114,6 +114,9 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			devil.setHome(grid.getLocation(devil));
 		}
 		
+		BirthManager birthManager = new BirthManager(context);
+		context.add(birthManager);
+		
 		return context;
 	}
 

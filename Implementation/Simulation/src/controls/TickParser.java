@@ -15,13 +15,26 @@ public class TickParser {
 	 * @param ticks
 	 * @return how many ticks are equal one day
 	 */
-	public static double getTicksPerDay (int ticks)
+	public static double getTicksPerDay ()
 	{
 		int ticksPerYear = Environment.getInstance().getTicksPerYear();
 		double ticksPerDay = ticksPerYear/365.;
 		
 		return ticksPerDay;
 	}
+	
+	
+	/**
+	 * 
+	 * @param ticks
+	 * @return how many ticks are equal one year
+	 */
+	public static double getTicksPerYear ()
+	{
+		return Environment.getInstance().getTicksPerYear();
+	}
+	
+	
 	
 	/**
 	 * 
@@ -30,7 +43,7 @@ public class TickParser {
 	 */
 	public static double getExactDaysFromTicks (int ticks) 
 	{
-		double ticksPerDay = getTicksPerDay(ticks);
+		double ticksPerDay = getTicksPerDay();
 		
 		double days = ticks/ticksPerDay;
 		return days;
@@ -43,7 +56,7 @@ public class TickParser {
 	 */
 	public static int getCompleteDaysFromTicks (int ticks) 
 	{
-		double ticksPerDay = getTicksPerDay(ticks);
+		double ticksPerDay = getTicksPerDay();
 		
 		int days = (int)Math.floor(ticksPerDay);
 		return days;

@@ -19,6 +19,7 @@ import repast.simphony.space.grid.WrapAroundBorders;
 import simulation.Environment;
 import simulation.TasmanianDevil;
 import states.FemaleHealthyState;
+import states.MaleHealthyState;
 import states.FemaleSickState;
 import states.MaleSickState;
 
@@ -38,21 +39,37 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);
 		
 		Grid<Object> grid = gridFactory.createGrid("grid", context, new GridBuilderParameters<Object>(new WrapAroundBorders(),new SimpleGridAdder<Object>(),true,50,50));
-		
-		//add male individuals
-		int maleCount = 15;
-		for(int i = 0; i < maleCount; i++  ) {
+
+		//add male sick individuals
+		int maleSickCount = 2;
+		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
 			tmpDevil.setHome(grid.getLocation(this));
 		}
-		
-		//add female individuals
-		int femaleCount = 10;
-		for(int i = 0; i < femaleCount; i++) {
-			context.add(new TasmanianDevil(space, grid, new FemaleSickState()));
-			context.add(new TasmanianDevil(space,grid, new FemaleHealthyState()));
+
+		//add male healthy individuals
+		int maleHealthyCount = 1;
+		for(int i = 0; i < maleHealthyCount; i++  ) {
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
+			context.add(tmpDevil);
+			tmpDevil.setHome(grid.getLocation(this));
 		}
+		//add male sick individuals
+		int femaleSickCount = 3;
+		for(int i = 0; i < femaleSickCount; i++  ) {
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
+			context.add(tmpDevil);
+			tmpDevil.setHome(grid.getLocation(this));
+		}
+
+		//add male healthy individuals
+		int femaleHealthyCount = 4;
+		for(int i = 0; i < femaleHealthyCount; i++  ) {
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
+			context.add(tmpDevil);
+			tmpDevil.setHome(grid.getLocation(this));
+		}		
 		
 		for(Object obj:context) {
 			NdPoint pt = space.getLocation(obj);

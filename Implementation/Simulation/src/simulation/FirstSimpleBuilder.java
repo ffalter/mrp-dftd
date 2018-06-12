@@ -37,8 +37,9 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		//add male individuals
 		int maleCount = 15;
 		for(int i = 0; i < maleCount; i++  ) {
-			context.add(new TasmanianDevil(space, grid, new MaleSickState()));
-			context.add(new TasmanianDevil(space,grid, new MaleHealthyState()));
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
+			context.add(tmpDevil);
+			tmpDevil.setHome(grid.getLocation(this));
 		}
 		
 		//add female individuals

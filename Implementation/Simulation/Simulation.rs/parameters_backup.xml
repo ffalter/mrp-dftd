@@ -7,7 +7,13 @@
 									
 		/>
 				<parameter name="mapSizeY" displayName="Map Size Y direction" type="int" 
-						defaultValue="100000" 
+						defaultValue="500" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="matingSeasonEndDay" displayName="Mating Season End Day" type="int" 
+						defaultValue="91" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -19,7 +25,7 @@
 									
 		/>
 				<parameter name="mapSizeX" displayName="Map Size X direction" type="int" 
-						defaultValue="100000" 
+						defaultValue="500" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -50,6 +56,18 @@
 		/>
 				<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
 						defaultValue="__NULL__"
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="matingSeasonStartDay" displayName="Mating Season Start Day" type="int" 
+						defaultValue="60" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="tickValue" displayName="x ticks = 365 days" type="int" 
+						defaultValue="365" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

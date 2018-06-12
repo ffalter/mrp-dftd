@@ -25,7 +25,8 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 	@Override
 	public Context<Object> build(Context<Object> context) {
-		setParams();
+		Environment.reset();
+		Environment params= Environment.getInstance();
 		
 		NetworkBuilder<Object> netBuilder = new NetworkBuilder<Object>("infection network", context,true);
 		netBuilder.buildNetwork();
@@ -33,33 +34,35 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		ContinuousSpaceFactory spaceFactory =
 				ContinuousSpaceFactoryFinder.createContinuousSpaceFactory(null);
 		ContinuousSpace<Object> space = spaceFactory.createContinuousSpace("space",
-				context, new RandomCartesianAdder<Object>(),new repast.simphony.space.continuous.WrapAroundBorders(),50,50);
+				context, new RandomCartesianAdder<Object>(),new repast.simphony.space.continuous.WrapAroundBorders(),params.getMapSizeX(),params.getMapSizeY());
 		GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);
 		
-		Grid<Object> grid = gridFactory.createGrid("grid", context, new GridBuilderParameters<Object>(new WrapAroundBorders(),new SimpleGridAdder<Object>(),true,50,50));
+		Grid<Object> grid = gridFactory.createGrid("grid", context, new GridBuilderParameters<Object>(new WrapAroundBorders(),new SimpleGridAdder<Object>(),true,params.getMapSizeX(),params.getMapSizeY()));
 
-		//add male sick individuals
-		int maleSickCount = 2;
+		System.out.println(params.getMapSizeY());
+		int maleSickCount = (int)(params.getPopulationSize()*(1-params.getFemaleRatio())*params.getInitialSickMale());
 		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
 		}
 
 		//add male healthy individuals
-		int maleHealthyCount = 1;
+		int maleHealthyCount = (int)(params.getPopulationSize()*(1-params.getFemaleRatio())*(1-params.getInitialSickMale()));
 		for(int i = 0; i < maleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
 			context.add(tmpDevil);
 		}
 		//add male sick individuals
-		int femaleSickCount = 3;
+		int femaleSickCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*params.getInitialSickFemale());
+		System.out.println("femalesick"+ femaleSickCount);
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
 		}
 
 		//add male healthy individuals
-		int femaleHealthyCount = 4;
+		int femaleHealthyCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*(1-params.getInitialSickFemale()));
+		System.out.println("femalehealthy"+ femaleHealthyCount);
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);
@@ -77,11 +80,5 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		
 		return context;
 	}
-	
-	public void setParams() {
-		// trigger first initialization
-		Environment.getInstance();
-	}
 
-	
 }

@@ -22,7 +22,10 @@ public class Environment {
 		this.ticksPerYear = params.getInteger("tickValue");
 		this.matingSeasonStartDay = params.getInteger("matingSeasonStartDay");
 		this.matingSeasonEndDay = params.getInteger("matingSeasonEndDay");
+		this.initialSickFemale= params.getDouble("initialSickFemale");
+		this.initialSickMale= params.getDouble("initialSickMale");
 	}
+
 
 	public static Environment getInstance() {
 		if (instance == null) {
@@ -30,12 +33,18 @@ public class Environment {
 		    }
 		    return instance;
 	}
+	
+	public static void reset() {
+		instance= new Environment();
+	}
 
 	private int mapSizeX;
 	private int mapSizeY;
 	private int populationSize;
 	private int ticksPerYear;
 	private double femaleRatio;
+	private double initialSickFemale;
+	private double initialSickMale;
 	private int matingSeasonStartDay;
 	private int matingSeasonEndDay;
 
@@ -89,6 +98,14 @@ public class Environment {
 	
 	public int getMatingSeasonEndDay() {
 		return matingSeasonEndDay;
+	}
+	
+	public double getInitialSickFemale() {
+		return initialSickFemale;
+	}
+
+	public double getInitialSickMale() {
+		return initialSickMale;
 	}
 
 }

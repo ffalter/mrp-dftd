@@ -9,13 +9,25 @@ import repast.simphony.random.RandomHelper;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.SimUtilities;
+import saf.v3d.ShapeFactory2D;
+import saf.v3d.scene.VShape;
+import saf.v3d.scene.VSpatial;
 import simulation.TasmanianDevil;
 
 public class FemaleSickState extends AbstractState {
 
 	@Override
 	public Color getColor() {
-		return Color.YELLOW;
+		return Color.RED;
+	}
+	
+	@Override
+	public VSpatial getSpatialVisualisation(ShapeFactory2D shapeFactory)
+	{
+		VShape circle = shapeFactory.createCircle(10, 10);
+		circle.setBorderColor(Color.BLACK);
+		circle.setBorderStrokeSize(5);
+		return circle;
 	}
 	
 	@Override

@@ -20,6 +20,8 @@ public class Environment {
 		this.populationSize = params.getInteger("populationSize");
 		this.steprange = params.getInteger("stepRange");
 		this.ticksPerYear = params.getInteger("tickValue");
+		this.matingSeasonStartDay = params.getInteger("matingSeasonStartDay");
+		this.matingSeasonEndDay = params.getInteger("matingSeasonEndDay");
 	}
 
 	public static Environment getInstance() {
@@ -34,6 +36,8 @@ public class Environment {
 	private int populationSize;
 	private int ticksPerYear;
 	private double femaleRatio;
+	private int matingSeasonStartDay;
+	private int matingSeasonEndDay;
 
 	private int steprange;
 	private int interactionRadius;
@@ -77,6 +81,14 @@ public class Environment {
 
 	public double getInfectionRateMating() {
 		return infectionRateMating;
+	}
+	
+	public int getMatingSeasonStartDay() {
+		return matingSeasonStartDay;
+	}
+	
+	public int getMatingSeasonEndDay() {
+		return matingSeasonEndDay;
 	}
 
 }

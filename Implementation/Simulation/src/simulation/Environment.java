@@ -12,7 +12,7 @@ public class Environment {
 	{
 		final Parameters params = RunEnvironment.getInstance().getParameters();
 		this.infectionRate = params.getDouble("infectionRate");
-		this.infectionRateMating = params.getDouble("infectionRateMating");
+		this.infectionMatingFactor = params.getDouble("infectionMatingFactor");
 		this.femaleRatio = params.getDouble("femaleRatio");
 		this.interactionRadius = params.getInteger("interactionRadius");
 		this.mapSizeX = params.getInteger("mapSizeX");
@@ -24,6 +24,7 @@ public class Environment {
 		this.matingSeasonEndDay = params.getInteger("matingSeasonEndDay");
 		this.initialSickFemale= params.getDouble("initialSickFemale");
 		this.initialSickMale= params.getDouble("initialSickMale");
+		this.vaccinatedInfectionRate = params.getDouble("vaccinatedInfectionRate");
 	}
 
 
@@ -54,7 +55,8 @@ public class Environment {
 	// probability of getting infected during interaction
 	private double infectionRate;
 	// probability of getting infected male - female (only during mating time)
-	private double infectionRateMating;
+	private double infectionMatingFactor;
+	private double vaccinatedInfectionRate;
 
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -88,8 +90,8 @@ public class Environment {
 		return infectionRate;
 	}
 
-	public double getInfectionRateMating() {
-		return infectionRateMating;
+	public double getInfectionMatingFactor() {
+		return infectionMatingFactor;
 	}
 	
 	public int getMatingSeasonStartDay() {
@@ -106,6 +108,10 @@ public class Environment {
 
 	public double getInitialSickMale() {
 		return initialSickMale;
+	}
+	
+	public double getVaccinatedInfectionRate() {
+		return vaccinatedInfectionRate;
 	}
 
 }

@@ -9,8 +9,11 @@ import states.AbstractState;
  *
  */
 public class StateManager {
+	
 	public static AbstractState getState(TasmanianDevil devil)
 	{
+		
 		return null;
 	}
+	
 }

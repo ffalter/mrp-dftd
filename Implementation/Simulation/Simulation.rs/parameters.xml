@@ -36,8 +36,8 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
-				<parameter name="infectionRateMating" displayName="Infection rate during mating" type="double" 
-						defaultValue="0.02" 
+				<parameter name="infectionMatingFactor" displayName="Factor to increase Mating Infection" type="double" 
+						defaultValue="3" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -90,6 +90,11 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
+		<parameter name ="vaccinatedInfectionRate" displayName = "Vaccinated Infection Rate" type="double"
+				   defaultValue="0.001"
+				   isReadOnly="false"
+				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+				   />
 		</parameters>
 
 

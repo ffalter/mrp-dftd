@@ -1,6 +1,7 @@
 package simulation;
 
 import controls.StateManager;
+import controls.TickParser;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
@@ -33,7 +34,8 @@ public class TasmanianDevil {
 	private int dead;
 	
 	/** True if the agent is vaccinated, false otherwise.*/
-	private boolean vaccinated;
+	private boolean vaccinatedDFT1;
+	private boolean vaccinatedDFT2;
 	
 	/** This is the center around which the devil will move.*/
 	private GridPoint home;
@@ -106,12 +108,17 @@ public class TasmanianDevil {
 		dead += ticks;
 	}
 
-	public boolean isVaccinated() {
-		return vaccinated;
+	public boolean isVaccinatedDFT1() {
+		return vaccinatedDFT1;
+	}
+	
+	public boolean isVaccinatedDFT2() {
+		return vaccinatedDFT2;
 	}
 
 	public void vaccinate() {
-		vaccinated = true;
+		vaccinatedDFT1 = true;
+		vaccinatedDFT2 = true;
 	}
 
 	public GridPoint getHome() {
@@ -134,5 +141,28 @@ public class TasmanianDevil {
 	public ContinuousSpace<Object> getSpace()
 	{
 		return this.space;
+	}
+	
+	public boolean isFemale() {
+		return this.currentState.isFemaleState();
+	}
+	
+	public boolean isInfectiousDFT1() {
+		if(TickParser.getCompleteDaysFromTicks(this.getSickDFT1()) > 180)
+		{
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isInfectiousDFT2()
+	{
+		if(TickParser.getCompleteDaysFromTicks(this.getSickDFT2()) > 180)
+		{
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

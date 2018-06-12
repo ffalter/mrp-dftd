@@ -91,7 +91,7 @@ public class VaccinationManager {
 		for(Object obj : context.getObjects(TasmanianDevil.class))
 		{
 			TasmanianDevil currDevil = (TasmanianDevil) obj;			
-			if(currDevil.getDead()==0 && currDevil.getAge() >= canBeVaccinatedAge && !currDevil.getCurrentState().isSickState() && !currDevil.isVaccinated())
+			if(currDevil.getDead()==0 && currDevil.getAge() >= canBeVaccinatedAge && !currDevil.getCurrentState().isSickState() && !currDevil.isVaccinatedDFT1())
 			{
 				possibleVaccinatable.add(currDevil);	
 			}

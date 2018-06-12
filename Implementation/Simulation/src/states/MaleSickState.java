@@ -67,24 +67,4 @@ public class MaleSickState extends AbstractState {
 	{
 		return false;
 	}
-
-	public boolean isInfectiousDFT1(TasmanianDevil devil)
-	{
-		if(TickParser.getCompleteDaysFromTicks(devil.getSickDFT1()) > 180)
-		{
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public boolean isInfectiousDFT2(TasmanianDevil devil)
-	{
-		if(TickParser.getCompleteDaysFromTicks(devil.getSickDFT2()) > 180)
-		{
-			return true;
-		} else {
-			return false;
-		}
-	}
 }

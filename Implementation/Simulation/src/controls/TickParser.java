@@ -94,5 +94,10 @@ public class TickParser {
 		}
 		return true;
 	}
+	
+	public static int getYearsFromTicks (int ticks) {
+		double years = ticks/getTicksPerYear();
+		return (int)Math.floor(years);
+	}
 
 }

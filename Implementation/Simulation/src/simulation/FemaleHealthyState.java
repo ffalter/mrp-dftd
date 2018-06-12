@@ -10,14 +10,15 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.SimUtilities;
 
-public class FemaleOld extends AbstractState{
+public class FemaleHealthyState extends AbstractState {
+
 	@Override
 	public Color getColor() {
-		return Color.PINK;
+		return Color.GREEN;
 	}
 	
 	@Override
-	public void step(TasmanianDevil devil)  {
+	public void step(TasmanianDevil devil) {
 		Grid<Object> grid = devil.grid;
 		GridPoint pt = grid.getLocation(devil);
 		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(grid, pt,TasmanianDevil.class , 4, 4);
@@ -43,41 +44,17 @@ public class FemaleOld extends AbstractState{
 		//if(pregnant) {
 		//	pregnant();
 		//}
-		
-	}
 	
+	}
+
 	@Override
 	public boolean isSickState() {
 		return false;
 	}
-	
+
 	@Override
-	public boolean isFemaleState()
-	{
-		return false;
+	public boolean isFemaleState() {
+		return true;
 	}
 
-	/*
-	
-	public void pregnant() {
-		GridPoint pt = grid.getLocation(this);
-		List<Object> females = new ArrayList<Object>();
-		for(Object obj : grid.getObjectsAt(pt.getX(),pt.getY())) {
-			if(obj instanceof FemaleOld) {
-				females.add(obj);
-			}
-		}
-		if(females.size() > 0) {
-			int index = RandomHelper.nextIntFromTo(0, females.size()-1);
-			Object obj = females.get(index);
-			NdPoint spacePt = space.getLocation(obj);
-			Context<Object> context = ContextUtils.getContext(obj);
-			context.remove(obj);
-			PregnantOld preg = new PregnantOld(space, grid);
-			context.add(preg);
-			space.moveTo(preg, spacePt.getX(),spacePt.getY());
-			grid.moveTo(preg, pt.getX(),pt.getY());
-
-		}
-	}*/
 }

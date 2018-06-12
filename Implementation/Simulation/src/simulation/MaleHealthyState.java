@@ -9,16 +9,18 @@ import repast.simphony.random.RandomHelper;
 import repast.simphony.space.grid.GridPoint;
 import repast.simphony.util.SimUtilities;
 
-public class MaleOld extends AbstractState{
+public class MaleHealthyState extends AbstractState {
 	
 	@Override
 	public Color getColor() {
-		return Color.GREEN;
+		return Color.BLUE;
 	}
+
 	
 	@Override
 	public void step(TasmanianDevil devil) {
 		GridPoint pt = devil.grid.getLocation(devil);
+		
 		GridCellNgh <TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.grid,pt,TasmanianDevil.class, 4, 4);
 		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
 		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
@@ -37,21 +39,18 @@ public class MaleOld extends AbstractState{
 				maxCount = cell.size();
 			}
 		}
-		moveTowards(devil, pointWithMostFemales, maxCount);
-		doMainStep(devil);
-		
+		moveTowards(devil, pointWithMostFemales, 0);
 	}
-
 	
 	@Override
 	public boolean isSickState() {
 		return false;
 	}
-	
+
 	@Override
-	public boolean isFemaleState()
-	{
+	public boolean isFemaleState() {
 		return false;
 	}
-}
 
+
+}

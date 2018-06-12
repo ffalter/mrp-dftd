@@ -55,20 +55,14 @@ public class VaccinationManager {
 	public void run() throws Exception
 	{
 		int currentTick = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
-		System.out.println("isVaccinationInterval:"+isVaccinationInterval(currentTick));
 		if(isVaccinationInterval(currentTick))
 		{
 			// if no devil needs to be vaccinated, calculate new value for this season
-			System.out.println("numToVaccinateThisSeason:"+numToVaccinateThisSeason);
 			if(numToVaccinateThisSeason == 0)
 			{
-				System.out.println("calc:"+ ((int) (willBeAddVaccinated * (durationOfVaccinationSeason+1) / TickParser.getTicksPerYear())));
 				numToVaccinateThisSeason = ((int) (willBeAddVaccinated * (durationOfVaccinationSeason+1) / TickParser.getTicksPerYear()));
-				System.out.println("numToVaccinateThisSeason1:"+numToVaccinateThisSeason);
 			}
-			System.out.println("numToVaccinateThisSeason2:"+numToVaccinateThisSeason);
 			// if we vaccinate at least one per tick:
-			System.out.println("at least one per tick:"+(numToVaccinateThisSeason > durationOfVaccinationSeason/TickParser.getTicksPerDay()));
 			if(numToVaccinateThisSeason > durationOfVaccinationSeason/TickParser.getTicksPerDay())
 			{
 				int numToVaccinatePerTick = numToVaccinateThisSeason/durationOfVaccinationSeason;

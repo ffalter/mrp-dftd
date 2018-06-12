@@ -64,14 +64,14 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 	
 	public void setParams() {
 		final Parameters params = RunEnvironment.getInstance().getParameters();
-		Environment.infectionRate = params.getDouble("infectionRate");
-		Environment.infectionRateMating = params.getDouble("infectionRateMating");
-		Environment.femaleRatio = params.getDouble("femaleRatio");
-		Environment.interactionRadius= params.getDouble("interactionRadius");
-		Environment.mapSizeX= params.getInteger("mapSizeX");
-		Environment.mapSizeY= params.getInteger("mapSizeY");
-		Environment.populationSize= params.getInteger("populationSize");
-		Environment.steprange= params.getInteger("stepRange");
+		Environment.getInstance().infectionRate = params.getDouble("infectionRate");
+		Environment.getInstance().infectionRateMating = params.getDouble("infectionRateMating");
+		Environment.getInstance().femaleRatio = params.getDouble("femaleRatio");
+		Environment.getInstance().interactionRadius= params.getInteger("interactionRadius");
+		Environment.getInstance().mapSizeX= params.getInteger("mapSizeX");
+		Environment.getInstance().mapSizeY= params.getInteger("mapSizeY");
+		Environment.getInstance().populationSize= params.getInteger("populationSize");
+		Environment.getInstance().steprange= params.getInteger("stepRange");
 	}
 
 	

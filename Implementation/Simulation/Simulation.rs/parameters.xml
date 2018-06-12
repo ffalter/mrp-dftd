@@ -54,10 +54,10 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="interactionRadius" displayName="Interaction Radius" type="double" 
-						defaultValue="500.0" 
+				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
+						defaultValue="500" 
 						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 		</parameters>

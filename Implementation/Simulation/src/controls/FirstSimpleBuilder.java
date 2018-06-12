@@ -113,9 +113,12 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			TasmanianDevil devil = (TasmanianDevil)obj;
 			devil.setHome(grid.getLocation(devil));
 		}
-		
+
 		BirthManager birthManager = new BirthManager(context);
 		context.add(birthManager);
+		
+		VaccinationManager vaccinationManager = new VaccinationManager(context);
+		context.add(vaccinationManager);
 		
 		return context;
 	}

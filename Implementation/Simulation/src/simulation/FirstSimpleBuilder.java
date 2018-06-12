@@ -21,9 +21,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 	@Override
 	public Context<Object> build(Context<Object> context) {
-		final Parameters params = RunEnvironment.getInstance().getParameters();
-		final double birthrate = (Double) params.getValue("Birthrate");
-		System.out.println("The configured birthrate is "+birthrate+".");
+		setParams();
 		
 		NetworkBuilder<Object> netBuilder = new NetworkBuilder<Object>("infection network", context,true);
 		netBuilder.buildNetwork();
@@ -56,6 +54,18 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		}
 		
 		return context;
+	}
+	
+	public void setParams() {
+		final Parameters params = RunEnvironment.getInstance().getParameters();
+		Environment.infectionRate = params.getDouble("infectionRat");
+		Environment.infectionRateMating = params.getDouble("infectionRateMating");
+		Environment.femaleRatio = params.getDouble("femaleRatio");
+		Environment.interactionRadius= params.getInteger("infectionradius");
+		Environment.mapSizeX= params.getInteger("mapSizeX");
+		Environment.mapSizeY= params.getInteger("mapSizeY");
+		Environment.populationSize= params.getInteger("populationSize");
+		Environment.steprange= params.getInteger("stepSize");
 	}
 
 	

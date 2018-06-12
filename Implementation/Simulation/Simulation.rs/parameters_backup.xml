@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
-					<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
-						defaultValue="__NULL__"
+					<parameter name="initialSickMale" displayName="percentage of sick male in the beginning" type="double" 
+						defaultValue="0.02" 
 						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
 				<parameter name="mapSizeY" displayName="Map Size Y direction" type="int" 
@@ -30,10 +30,28 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
+				<parameter name="infectionRateMating" displayName="Infection rate during mating" type="double" 
+						defaultValue="0.02" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
 				<parameter name="birthrate" displayName="Birthrate" type="double" 
 						defaultValue="0.005" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
+						defaultValue="0.02" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
+						defaultValue="__NULL__"
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 				<parameter name="stepRange" displayName="Step Range (default)" type="int" 
@@ -48,10 +66,10 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="interactionRadius" displayName="Interaction Radius" type="double" 
-						defaultValue="500.0" 
+				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
+						defaultValue="500" 
 						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 		</parameters>

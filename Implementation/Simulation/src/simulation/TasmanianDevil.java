@@ -93,13 +93,14 @@ public class TasmanianDevil {
 		return sickDFT2;
 	}
 
-	public void incrementSick(int ticks) {
-		if(sickDFT1 > 0)
-			sickDFT1 += ticks;
-		if(sickDFT2 > 0)
-			sickDFT2 += ticks;
+	public void incrementSickDFT1(int ticks) {
+		sickDFT1 += ticks;
 	}
 
+	public void incrementSickDFT2(int ticks) {
+		sickDFT2 += ticks;
+	}
+	
 	public int getDead() {
 		return dead;
 	}

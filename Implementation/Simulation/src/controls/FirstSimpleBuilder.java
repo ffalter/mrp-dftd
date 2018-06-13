@@ -50,18 +50,19 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
+			tmpDevil.incrementSickDFT1(1);
 			if(i<maleSickCount*age0) {
-				tmpDevil.setAge(0);
+				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age1){
-				tmpDevil.setAge(1);
+				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age2){
-				tmpDevil.setAge(2);
+				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age3){
-				tmpDevil.setAge(3);
+				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age4){
-				tmpDevil.setAge(4);
+				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge(5);
+				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
 			}
 		}
 
@@ -71,58 +72,59 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
 			context.add(tmpDevil);
 			if(i<maleHealthyCount*age0) {
-				tmpDevil.setAge(0);
+				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age1){
-				tmpDevil.setAge(1);
+				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age2){
-				tmpDevil.setAge(2);
+				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age3){
-				tmpDevil.setAge(3);
+				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age4){
-				tmpDevil.setAge(4);
+				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge(5);
+				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
 			}
 		}
 		//add male sick individuals
 		int femaleSickCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*params.getInitialSickFemale());
-		System.out.println("femalesick"+ femaleSickCount);
+		System.out.println("femalesick "+ femaleSickCount);
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
+			tmpDevil.incrementSickDFT1(1);
 			if(i<femaleSickCount*age0) {
-				tmpDevil.setAge(0);
+				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age1){
-				tmpDevil.setAge(1);
+				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age2){
-				tmpDevil.setAge(2);
+				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age3){
-				tmpDevil.setAge(3);
+				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age4){
-				tmpDevil.setAge(4);
+				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge(5);
+				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
 			}
 		}
 
 		//add male healthy individuals
 		int femaleHealthyCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*(1-params.getInitialSickFemale()));
-		System.out.println("femalehealthy"+ femaleHealthyCount);
+		System.out.println("femalehealthy "+ femaleHealthyCount);
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);
 			if(i<femaleHealthyCount*age0) {
-				tmpDevil.setAge(0);
+				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age1){
-				tmpDevil.setAge(1);
+				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age2){
-				tmpDevil.setAge(2);
+				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age3){
-				tmpDevil.setAge(3);
+				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age4){
-				tmpDevil.setAge(4);
+				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge(5);
+				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
 			}	
 		}		
 		

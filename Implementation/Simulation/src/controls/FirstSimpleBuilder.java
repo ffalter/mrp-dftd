@@ -26,6 +26,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		StateManager.initialize(context);
+		InteractionManager.getInstance();
 		Environment.reset();
 		Environment params= Environment.getInstance();
 		double age0 = 0.5735;

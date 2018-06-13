@@ -55,7 +55,7 @@ public class InteractionManager {
 		return instance;
 	}
 	
-	public void reset() {
+	public static void reset() {
 		instance = new InteractionManager();
 	}
 	

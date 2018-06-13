@@ -25,6 +25,7 @@ public class Environment {
 		this.initialSickFemale= params.getDouble("initialSickFemale");
 		this.initialSickMale= params.getDouble("initialSickMale");
 		this.vaccinatedInfectionRate = params.getDouble("vaccinatedInfectionRate");
+		this.naturalDeathRate = params.getDouble("naturalDeathRate");
 	}
 
 
@@ -57,7 +58,8 @@ public class Environment {
 	// probability of getting infected male - female (only during mating time)
 	private double infectionMatingFactor;
 	private double vaccinatedInfectionRate;
-
+	private double naturalDeathRate;
+	
 	public int getMapSizeX() {
 		return mapSizeX;
 	}
@@ -112,6 +114,10 @@ public class Environment {
 	
 	public double getVaccinatedInfectionRate() {
 		return vaccinatedInfectionRate;
+	}
+	
+	public double getNaturalDeathRate() {
+		return naturalDeathRate;
 	}
 
 }

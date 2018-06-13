@@ -95,6 +95,11 @@
 				   isReadOnly="false"
 				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 				   />
+		<parameter name ="naturalDeathRate" displayName = "Natural Death Rate" type="double"
+				   defaultValue="0.4"
+				   isReadOnly="false"
+				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+				   />
 		</parameters>
 
 

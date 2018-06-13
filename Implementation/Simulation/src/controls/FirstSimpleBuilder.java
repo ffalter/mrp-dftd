@@ -7,6 +7,7 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
+import repast.simphony.random.RandomHelper;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
 import repast.simphony.space.continuous.RandomCartesianAdder;
@@ -53,17 +54,17 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			context.add(tmpDevil);
 			tmpDevil.incrementSickDFT1(1);
 			if(i<maleSickCount*age0) {
-				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age1){
-				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(1, 2)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age2){
-				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(2, 3)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age3){
-				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(3, 4)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age4){
-				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(4, 5)*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(5, 6)*TickParser.getTicksPerYear()));
 			}
 		}
 
@@ -73,17 +74,17 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
 			context.add(tmpDevil);
 			if(i<maleHealthyCount*age0) {
-				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age1){
-				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(1, 2)*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age2){
-				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(2, 3)*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age3){
-				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(3, 4)*TickParser.getTicksPerYear()));
 			}else if(i<maleHealthyCount*age4){
-				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(4, 5)*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(5, 6)*TickParser.getTicksPerYear()));
 			}
 		}
 		//add male sick individuals
@@ -94,17 +95,17 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			context.add(tmpDevil);
 			tmpDevil.incrementSickDFT1(1);
 			if(i<femaleSickCount*age0) {
-				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age1){
-				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(1, 2)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age2){
-				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(2, 3)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age3){
-				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(3, 4)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age4){
-				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(4, 5)*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(5, 6)*TickParser.getTicksPerYear()));
 			}
 		}
 
@@ -115,18 +116,18 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);
 			if(i<femaleHealthyCount*age0) {
-				tmpDevil.setAge((int)(0*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age1){
-				tmpDevil.setAge((int)(1*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(1, 2)*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age2){
-				tmpDevil.setAge((int)(2*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(2, 3)*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age3){
-				tmpDevil.setAge((int)(3*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(3, 4)*TickParser.getTicksPerYear()));
 			}else if(i<femaleHealthyCount*age4){
-				tmpDevil.setAge((int)(4*TickParser.getTicksPerYear()));
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(4, 5)*TickParser.getTicksPerYear()));
 			}else{
-				tmpDevil.setAge((int)(5*TickParser.getTicksPerYear()));
-			}	
+				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(5, 6)*TickParser.getTicksPerYear()));
+			}
 		}		
 		
 		for(Object obj:context) {

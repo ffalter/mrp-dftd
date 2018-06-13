@@ -50,6 +50,11 @@ public class StateManager {
 				context.remove(devil);
 			}
 		}else if(devil.getSickDFT1()>0 || devil.getSickDFT2()>0) {
+			//TODO use right values
+			if(devil.getSickDFT1()>180||devil.getSickDFT2()>180) {
+				devil.incrementDead(1);
+				return new DeathState();
+			}
 			if(devil.isFemale()) {
 				return new FemaleSickState();
 			}else {

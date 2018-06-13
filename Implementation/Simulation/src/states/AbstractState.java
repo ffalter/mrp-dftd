@@ -2,6 +2,7 @@ package states;
 
 import java.awt.Color;
 
+import controls.TickParser;
 import repast.simphony.random.RandomHelper;
 import repast.simphony.space.SpatialMath;
 import repast.simphony.space.continuous.ContinuousSpace;
@@ -75,7 +76,7 @@ public abstract class AbstractState {
 		
 		//if devil is sick, increment ticks of sickness
 		if(isSickState())
-			devil.incrementSick(1);		
+			devil.incrementSick(1);
 	}
 	
 	/**

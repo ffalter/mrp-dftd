@@ -27,6 +27,11 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 	public Context<Object> build(Context<Object> context) {
 		Environment.reset();
 		Environment params= Environment.getInstance();
+		double age0 = 0.5735;
+		double age1 = 0.1195 + age0;
+		double age2 = 0.0992 + age1;
+		double age3 = 0.0833 + age2;
+		double age4 = 0.0692 + age3;
 		
 		NetworkBuilder<Object> netBuilder = new NetworkBuilder<Object>("infection network", context,true);
 		netBuilder.buildNetwork();
@@ -44,14 +49,18 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
-			if(i<maleSickCount-(maleSickCount/26.*16)) {
+			if(i<maleSickCount*age0) {
+				tmpDevil.setAge(0);
+			}else if(i<maleSickCount*age1){
 				tmpDevil.setAge(1);
-			}else if(i<maleSickCount-(maleSickCount/26.*9)){
+			}else if(i<maleSickCount*age2){
 				tmpDevil.setAge(2);
-			}else if(i<maleSickCount-(maleSickCount/26.*4)){
+			}else if(i<maleSickCount*age3){
 				tmpDevil.setAge(3);
-			}else{
+			}else if(i<maleSickCount*age4){
 				tmpDevil.setAge(4);
+			}else{
+				tmpDevil.setAge(5);
 			}
 		}
 
@@ -60,14 +69,18 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
 			context.add(tmpDevil);
-			if(i<maleSickCount-(maleHealthyCount/26.*16)) {
+			if(i<maleHealthyCount*age0) {
+				tmpDevil.setAge(0);
+			}else if(i<maleHealthyCount*age1){
 				tmpDevil.setAge(1);
-			}else if(i<maleSickCount-(maleHealthyCount/26.*9)){
+			}else if(i<maleHealthyCount*age2){
 				tmpDevil.setAge(2);
-			}else if(i<maleSickCount-(maleHealthyCount/26.*4)){
+			}else if(i<maleHealthyCount*age3){
 				tmpDevil.setAge(3);
-			}else{
+			}else if(i<maleHealthyCount*age4){
 				tmpDevil.setAge(4);
+			}else{
+				tmpDevil.setAge(5);
 			}
 		}
 		//add male sick individuals
@@ -76,14 +89,18 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
-			if(i<maleSickCount-(femaleSickCount/26.*16)) {
+			if(i<femaleSickCount*age0) {
+				tmpDevil.setAge(0);
+			}else if(i<femaleSickCount*age1){
 				tmpDevil.setAge(1);
-			}else if(i<maleSickCount-(femaleSickCount/26.*9)){
+			}else if(i<femaleSickCount*age2){
 				tmpDevil.setAge(2);
-			}else if(i<maleSickCount-(femaleSickCount/26.*4)){
+			}else if(i<femaleSickCount*age3){
 				tmpDevil.setAge(3);
-			}else{
+			}else if(i<femaleSickCount*age4){
 				tmpDevil.setAge(4);
+			}else{
+				tmpDevil.setAge(5);
 			}
 		}
 
@@ -93,15 +110,19 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);
-			if(i<maleSickCount-(femaleHealthyCount/26.*16)) {
+			if(i<femaleHealthyCount*age0) {
+				tmpDevil.setAge(0);
+			}else if(i<femaleHealthyCount*age1){
 				tmpDevil.setAge(1);
-			}else if(i<maleSickCount-(femaleHealthyCount/26.*9)){
+			}else if(i<femaleHealthyCount*age2){
 				tmpDevil.setAge(2);
-			}else if(i<maleSickCount-(femaleHealthyCount/26.*4)){
+			}else if(i<femaleHealthyCount*age3){
 				tmpDevil.setAge(3);
-			}else{
+			}else if(i<femaleHealthyCount*age4){
 				tmpDevil.setAge(4);
-			} 	
+			}else{
+				tmpDevil.setAge(5);
+			}	
 		}		
 		
 		for(Object obj:context) {

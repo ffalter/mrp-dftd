@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.random.RandomHelper;
 import repast.simphony.space.continuous.NdPoint;
 import simulation.Environment;
 import simulation.TasmanianDevil;
@@ -65,7 +66,6 @@ public class BirthManager {
 		{
 			ArrayList<TasmanianDevil> possibleMothers = getPossibleMothers();
 			int mothersCount=possibleMothers.size();
-			
 			// if no children needs to be born, calculate new value for this season
 			if(needToBePregnant == 0)
 			{
@@ -74,11 +74,12 @@ public class BirthManager {
 			}
 			
 			// give birth on each day to average number of new children:
-			int numberOfNewPregnantAnimals = (int) (needToBePregnant / durationOfBirthSeason);
+			//int numberOfNewPregnantAnimals = (int) (needToBePregnant / durationOfBirthSeason);
+			int numberOfNewPregnantAnimals = RandomHelper.nextIntFromTo(0, ((int) (needToBePregnant / durationOfBirthSeason))+2);
 			giveBirth(numberOfNewPregnantAnimals, possibleMothers);
 			needToBePregnant -= numberOfNewPregnantAnimals;
 		}
-		else
+		else if(needToBePregnant!=0)
 		{
 			//spawn rest of animals
 			giveBirth(needToBePregnant, getPossibleMothers());
@@ -106,11 +107,11 @@ public class BirthManager {
 		return ((startOfBirthSeason)%ticksPerYear < (currentTick)%ticksPerYear
 			&& currentTick%ticksPerYear-startOfBirthSeason%ticksPerYear < (durationOfBirthSeason)%ticksPerYear);
 	}
-	
+
 	private void giveBirth(int numberOfNewPregnantAnimals, ArrayList<TasmanianDevil> possibleMothers)
 	{
 		//System.out.println("Give birth to "+ numberOfNewPregnantAnimals +" animals.");
-		if (numberOfNewPregnantAnimals != 0 && possibleMothers != null && possibleMothers.size() > numberOfNewPregnantAnimals)
+		while (numberOfNewPregnantAnimals != 0 && possibleMothers != null && possibleMothers.size() > numberOfNewPregnantAnimals)
 		{
 			int index = random.nextInt(possibleMothers.size());
 			TasmanianDevil mother = possibleMothers.get(index);
@@ -122,6 +123,8 @@ public class BirthManager {
 				babyDevil.getGrid().moveTo(babyDevil, (int)pt.getX(),(int)pt.getY());
 				babyDevil.setHome(babyDevil.getGrid().getLocation(babyDevil));
 			}
+			numberOfNewPregnantAnimals--;
+			possibleMothers.remove(index);
 		}
 	}
 	

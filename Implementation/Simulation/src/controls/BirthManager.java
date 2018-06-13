@@ -47,8 +47,8 @@ public class BirthManager {
 	private int needToBePregnant = 0;
 	
 	public BirthManager(Context<Object> context) {
-		startOfBirthSeason 	  = Environment.getInstance().getMatingSeasonStartDay() + offsetFromMatingSeason; 
-		durationOfBirthSeason = Environment.getInstance().getMatingSeasonEndDay()- Environment.getInstance().getMatingSeasonStartDay();
+		startOfBirthSeason 	  = (int)(Environment.getInstance().getMatingSeasonStartDay()*TickParser.getTicksPerDay()) + offsetFromMatingSeason; 
+		durationOfBirthSeason = (int)((Environment.getInstance().getMatingSeasonEndDay()- Environment.getInstance().getMatingSeasonStartDay())*TickParser.getTicksPerDay());
 		percentageOfBirth     = 0.75; //TODO add to parameters
 		this.context = context;
 	}

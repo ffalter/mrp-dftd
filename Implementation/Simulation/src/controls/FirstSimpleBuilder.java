@@ -52,7 +52,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < maleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
 			context.add(tmpDevil);
-			tmpDevil.incrementSickDFT1(1);
+			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<maleSickCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age1){
@@ -93,7 +93,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
-			tmpDevil.incrementSickDFT1(1);
+			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<femaleSickCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age1){

@@ -67,7 +67,7 @@ public class InteractionManager {
 		dft1 = devil2.isInfectiousDFT1();
 		dft2 = devil2.isInfectiousDFT2();
 		
-		int gender1,gender2,state1dft1,state1dft2,state2;
+		int gender1,gender2,state1dft1,state1dft2,state2dft1,state2dft2;
 		
 		if(devil1.isFemale()) {
 			gender1 = 0;
@@ -105,16 +105,26 @@ public class InteractionManager {
 		
 		if(devil2.getSickDFT1() == 0 && devil2.getSickDFT2() == 0) {
 			if(devil2.isVaccinatedDFT1() || devil2.isVaccinatedDFT2()) {
-				state2 = 1;
+				state2dft1 = 1;
+				state2dft2 = 1;
 			} else {
-				state2 = 0;
+				state2dft1 = 0;
+				state2dft2 = 0;
 			}
+		} else if(devil2.isInfectiousDFT1() && devil2.isInfectiousDFT2()){
+			state2dft1 = 2;
+			state2dft2 = 2;
+		} else if(devil2.isInfectiousDFT1()) {
+			state2dft1 = 2;
+			state2dft2 = 0;
 		} else {
-			state2 = 2;
+			state2dft1 = 0;
+			state2dft2 = 2;
 		}
 		
-		ret[0] = interactionMatrix[dft.DFT1.ordinal()][gender1][state1dft1][gender2][state2];
-		ret[1] = interactionMatrix[dft.DFT2.ordinal()][gender1][state1dft2][gender2][state2];
+		
+		ret[0] = interactionMatrix[dft.DFT1.ordinal()][gender1][state1dft1][gender2][state2dft1];
+		ret[1] = interactionMatrix[dft.DFT2.ordinal()][gender1][state1dft2][gender2][state2dft2];
 		
 		return ret;
 		

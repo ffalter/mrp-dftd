@@ -43,6 +43,9 @@ public class TasmanianDevil {
 	/** The current state of the agent. Should only be set via StateManager.*/
 	private AbstractState currentState;
 	
+	/** Interaction partner for pairwise interactions. */
+	private TasmanianDevil interactionPartner;
+	
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState)
 	{
 		this(space, grid, false, startState);
@@ -165,6 +168,14 @@ public class TasmanianDevil {
 		} else {
 			return false;
 		}
+	}
+	
+	public void setInteractionPartner(TasmanianDevil partner) {
+		this.interactionPartner= partner;
+	}
+	
+	public TasmanianDevil getInteractionPartner() {
+		return interactionPartner;
 	}
 	
 	public int sickCounterHelper() {

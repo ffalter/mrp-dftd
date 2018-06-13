@@ -80,18 +80,21 @@ public abstract class AbstractState {
 		if (nn != null) {
 			double[] infectionProb = InteractionManager.getInstance().getInfectionProbability(devil, nn);
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
-
+				devil.incrementSickDFT1(1);
 			}
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
-
+				devil.incrementSickDFT2(1);
 			}
 		}
 		//make devil one tick older
 		devil.incrementAge(1);
 		
-		//if devil is sick, increment ticks of sickness
-		if(isSickState())
+		if(devil.getSickDFT1()>0) {
 			devil.incrementSickDFT1(1);
+		}
+		if(devil.getSickDFT2()>0) {
+			devil.incrementSickDFT2(1);
+		}
 	}
 	
 	/**
@@ -152,7 +155,9 @@ public abstract class AbstractState {
 			}
 		});
 		
-		return gridCells.get(0).items().iterator().next();
+		for(TasmanianDevil t : gridCells.get(0).items()) {
+			return t;
+		}
 		}
 		return null;
 	}	

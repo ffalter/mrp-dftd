@@ -46,6 +46,8 @@ public class TasmanianDevil {
 	/** Interaction partner for pairwise interactions. */
 	private TasmanianDevil interactionPartner;
 	
+	private boolean interacted;
+	
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState)
 	{
 		this(space, grid, false, startState);
@@ -60,6 +62,7 @@ public class TasmanianDevil {
 		if(vaccinated)
 			this.vaccinate();
 		this.currentState = startState;
+		this.interacted=false;
 	}
 	
 	/**
@@ -175,7 +178,15 @@ public class TasmanianDevil {
 	}
 	
 	public TasmanianDevil getInteractionPartner() {
-		return interactionPartner;
+		return this.interactionPartner;
+	}
+	
+	public void setInteracted(boolean interacted) {
+		this.interacted=interacted;
+	}
+	
+	public boolean hasInteracted() {
+		return this.interacted;
 	}
 	
 	public int sickCounterHelper() {

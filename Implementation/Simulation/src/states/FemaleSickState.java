@@ -33,8 +33,8 @@ public class FemaleSickState extends AbstractState {
 	
 	@Override
 	public void step(TasmanianDevil devil) {
-		randomMove(devil);
 		doMainStep(devil);
+		randomMove(devil);
 //		Grid<Object> grid = devil.getGrid();
 //		GridPoint pt = grid.getLocation(devil);
 //		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(grid, pt,TasmanianDevil.class , 4, 4);

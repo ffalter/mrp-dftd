@@ -83,13 +83,18 @@ public abstract class AbstractState {
 		}
 		if (nn != null) {
 			double[] infectionProb = InteractionManager.getInstance().getInfectionProbability(devil, nn);
-			devil.setInteractionPartner(null);
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
 				devil.incrementSickDFT1(1);
 			}
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
 				devil.incrementSickDFT2(1);
 			}
+			devil.setInteractionPartner(null);
+			if(nn.getDead()>0) {
+				//dead devil should be removed
+				nn.incrementDead(Integer.MAX_VALUE);
+			}
+			
 		}
 		//make devil one tick older
 		devil.incrementAge(1);
@@ -113,8 +118,15 @@ public abstract class AbstractState {
 		space.moveTo(devil, home.getX(), home.getY());
 		// select random point within range
 		double angle = RandomHelper.nextDoubleFromTo(0, 2*Math.PI);
+		
+		int steprange = Environment.getInstance().getSteprange();
+		//should not move as far as without interaction
+		if(devil.hasInteracted()) {
+			steprange /= 3;
+			devil.setInteracted(false);
+		}
 		//TODO maybe add something like gaussian distribution for the final distance from the home
-		space.moveByVector(devil, RandomHelper.nextDoubleFromTo(0, Environment.getInstance().getSteprange()), angle,0);
+		space.moveByVector(devil, RandomHelper.nextDoubleFromTo(0, steprange), angle,0);
 		NdPoint myPoint = space.getLocation(devil);
 		grid.moveTo(devil, (int) myPoint.getX(), (int) myPoint.getY());
 

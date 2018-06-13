@@ -66,11 +66,11 @@ public class TasmanianDevil {
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
 	public void run() throws Exception
 	{
-		System.out.println("Step: " + currentState.getClass().getName());
+		//System.out.println("Step: " + currentState.getClass().getName());
 		if(currentState == null)
 			throw new Exception("There is no state defined for this agent! Step cannot be evaluated");
 		currentState.step(this);
-		this.currentState = StateManager.getState(this);
+		currentState = StateManager.getState(this);
 	}
 
 	public int getAge() {
@@ -165,5 +165,26 @@ public class TasmanianDevil {
 		} else {
 			return false;
 		}
+	}
+	
+	public int sickCounterHelper() {
+		if (currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+
+	public int healthyCounterHelper() {
+		if (!currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+
+	public int deadCounterHelper() {
+		if (dead > 0) {
+			return 1;
+		}
+		return 0;
 	}
 }

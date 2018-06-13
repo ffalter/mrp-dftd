@@ -37,7 +37,13 @@
 									
 		/>
 				<parameter name="infectionMatingFactor" displayName="Factor to increase Mating Infection" type="double" 
-						defaultValue="3" 
+						defaultValue="3.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="vaccinatedInfectionRate" displayName="Vaccinated Infection Rate" type="double" 
+						defaultValue="0.001" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -85,7 +91,7 @@
 									
 		/>
 				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
-						defaultValue="500" 
+						defaultValue="20" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -100,6 +106,6 @@
 				   isReadOnly="false"
 				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 				   />
-		</parameters>
+</parameters>
 
 

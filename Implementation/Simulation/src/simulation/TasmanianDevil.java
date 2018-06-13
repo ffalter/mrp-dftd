@@ -70,7 +70,7 @@ public class TasmanianDevil {
 		if(currentState == null)
 			throw new Exception("There is no state defined for this agent! Step cannot be evaluated");
 		currentState.step(this);
-		StateManager.getState(this);
+		currentState = StateManager.getState(this);
 	}
 
 	public int getAge() {

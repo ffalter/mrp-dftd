@@ -1,8 +1,13 @@
 package states;
 
 import java.awt.Color;
+import java.util.Comparator;
+import java.util.List;
 
+import controls.InteractionManager;
 import controls.TickParser;
+import repast.simphony.query.space.grid.GridCell;
+import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.random.RandomHelper;
 import repast.simphony.space.SpatialMath;
 import repast.simphony.space.continuous.ContinuousSpace;
@@ -71,6 +76,16 @@ public abstract class AbstractState {
 	 */
 	public void doMainStep(TasmanianDevil devil)
 	{
+		TasmanianDevil nn = getClosestDevil(devil);
+		if (nn != null) {
+			double[] infectionProb = InteractionManager.getInstance().getInfectionProbability(devil, nn);
+			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
+
+			}
+			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
+
+			}
+		}
 		//make devil one tick older
 		devil.incrementAge(1);
 		
@@ -118,5 +133,27 @@ public abstract class AbstractState {
 		}*/
 	}
 
-	
+	/**
+	 * search for the nearest neighbor within the interaction range. 
+	 * @return
+	 */
+	public TasmanianDevil getClosestDevil(TasmanianDevil devil) {
+		GridPoint currentPosition= devil.getGrid().getLocation(devil);
+		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.getGrid(),currentPosition, TasmanianDevil.class, Environment.getInstance().getInteractionRadius(), Environment.getInstance().getInteractionRadius());
+		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
+		if(!gridCells.isEmpty()) {
+		gridCells.sort(new Comparator<GridCell<TasmanianDevil>>() {
+			//should sort by decreasing distance
+			@Override
+			public int compare(GridCell<TasmanianDevil> c1, GridCell<TasmanianDevil> c2) {
+				double dist1=devil.getGrid().getDistance(currentPosition, c1.getPoint());
+				double dist2=devil.getGrid().getDistance(currentPosition, c2.getPoint());
+				return dist1<dist2? 1: dist1==dist2? 0: -1;
+			}
+		});
+		
+		return gridCells.get(0).items().iterator().next();
+		}
+		return null;
+	}	
 }

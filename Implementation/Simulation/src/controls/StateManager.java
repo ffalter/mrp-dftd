@@ -40,7 +40,7 @@ public class StateManager {
 		// despawn corpse after 30 days
 		if(devil.getDead() > 0) {
 			devil.incrementDead(1);
-			if(TickParser.getCompleteDaysFromTicks(devil.getDead()) > Environment.getInstance().getDeadRemove()) {
+			if(TickParser.getCompleteDaysFromTicks(devil.getDead()) > TickParser.getTicksFromDays(Environment.getInstance().getDeadRemove())) {
 				context.remove(devil);
 			}
 		}else if(TickParser.getYearsFromTicks(devil.getAge()) >= 5) {
@@ -54,7 +54,7 @@ public class StateManager {
 		}else if(devil.getSickDFT1()>0 || devil.getSickDFT2()>0) {
 			Normal normal=RandomHelper.createNormal(360, 10);
 			int rand= normal.nextInt();
-			if(TickParser.getExactDaysFromTicks(devil.getSickDFT1())>rand||TickParser.getExactDaysFromTicks(devil.getSickDFT1())>rand) {
+			if(TickParser.getExactDaysFromTicks(devil.getSickDFT1())>rand||TickParser.getExactDaysFromTicks(devil.getSickDFT2())>rand) {
 				devil.incrementDead(1);
 				return new DeathState();
 			}
@@ -79,7 +79,7 @@ public class StateManager {
 				} else {
 					context.remove(devil);
 				}
-				System.out.println("Devil was killed by chance! Generated Number: " + rate + " Age of devil: " + devil.getAge() + " ticks");
+				//System.out.println("Devil was killed by chance! Generated Number: " + rate + " Age of devil: " + devil.getAge() + " ticks");
 			}
 		}
 		return devil.getCurrentState();

@@ -62,11 +62,6 @@ public class InteractionManager {
 	public double[] getInfectionProbability (TasmanianDevil devil1, TasmanianDevil devil2){
 		double[] ret = new double[2];
 		
-		boolean dft1,dft2;
-		
-		dft1 = devil2.isInfectiousDFT1();
-		dft2 = devil2.isInfectiousDFT2();
-		
 		int gender1,gender2,state1dft1,state1dft2,state2dft1,state2dft2;
 		
 		if(devil1.isFemale()) {

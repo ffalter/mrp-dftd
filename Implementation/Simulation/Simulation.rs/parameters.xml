@@ -79,7 +79,7 @@
 									
 		/>
 				<parameter name="tickValue" displayName="x ticks = 365 days" type="int" 
-						defaultValue="2000" 
+						defaultValue="365" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

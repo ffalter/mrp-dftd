@@ -86,7 +86,7 @@ public abstract class AbstractState {
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
 				devil.incrementSickDFT1(1);
 			}
-			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
+			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[1]) {
 				devil.incrementSickDFT2(1);
 			}
 			devil.setInteractionPartner(null);

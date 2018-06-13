@@ -2,7 +2,9 @@ package controls;
 
 import java.util.Random;
 
+import cern.jet.random.Normal;
 import repast.simphony.context.Context;
+import repast.simphony.random.RandomHelper;
 import simulation.Environment;
 import simulation.TasmanianDevil;
 import states.AbstractState;
@@ -50,8 +52,10 @@ public class StateManager {
 				context.remove(devil);
 			}
 		}else if(devil.getSickDFT1()>0 || devil.getSickDFT2()>0) {
-			//TODO use right values
-			if(TickParser.getExactDaysFromTicks(devil.getSickDFT1())>180||TickParser.getExactDaysFromTicks(devil.getSickDFT1())>180) {
+			//TODO use right values, 180 is just a guess
+			Normal normal=RandomHelper.createNormal(180, 15);
+			int rand= normal.nextInt();
+			if(TickParser.getExactDaysFromTicks(devil.getSickDFT1())>rand||TickParser.getExactDaysFromTicks(devil.getSickDFT1())>rand) {
 				devil.incrementDead(1);
 				return new DeathState();
 			}

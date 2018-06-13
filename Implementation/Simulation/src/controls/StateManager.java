@@ -51,7 +51,7 @@ public class StateManager {
 			}
 		}else if(devil.getSickDFT1()>0 || devil.getSickDFT2()>0) {
 			//TODO use right values
-			if(devil.getSickDFT1()>180||devil.getSickDFT2()>180) {
+			if(TickParser.getExactDaysFromTicks(devil.getSickDFT1())>180||TickParser.getExactDaysFromTicks(devil.getSickDFT1())>180) {
 				devil.incrementDead(1);
 				return new DeathState();
 			}

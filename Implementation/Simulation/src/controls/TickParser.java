@@ -58,7 +58,7 @@ public class TickParser {
 	{
 		double ticksPerDay = getTicksPerDay();
 		
-		int days = (int)Math.floor(ticksPerDay);
+		int days = (int)Math.floor(ticks/ticksPerDay);
 		return days;
 	}
 	

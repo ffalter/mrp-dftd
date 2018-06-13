@@ -76,7 +76,7 @@ public abstract class AbstractState {
 		
 		//if devil is sick, increment ticks of sickness
 		if(isSickState())
-			devil.incrementSick(1);
+			devil.incrementSickDFT1(1);
 	}
 	
 	/**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
 					<parameter name="initialSickMale" displayName="percentage of sick male in the beginning" type="double" 
-						defaultValue="0.02" 
+						defaultValue="0.12" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -19,7 +19,7 @@
 									
 		/>
 				<parameter name="infectionRate" displayName="Infection Rate" type="double" 
-						defaultValue="0.01" 
+						defaultValue="1.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -55,7 +55,13 @@
 									
 		/>
 				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
-						defaultValue="0.02" 
+						defaultValue="0.2" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="naturalDeathRate" displayName="Natural Death Rate" type="double" 
+						defaultValue="0.4" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -73,7 +79,7 @@
 									
 		/>
 				<parameter name="tickValue" displayName="x ticks = 365 days" type="int" 
-						defaultValue="365" 
+						defaultValue="2000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -96,16 +102,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-		<parameter name ="vaccinatedInfectionRate" displayName = "Vaccinated Infection Rate" type="double"
-				   defaultValue="0.001"
-				   isReadOnly="false"
-				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-				   />
-		<parameter name ="naturalDeathRate" displayName = "Natural Death Rate" type="double"
-				   defaultValue="0.4"
-				   isReadOnly="false"
-				   converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-				   />
-</parameters>
+				<parameter name="deadRemove" displayName="x days until dead agents are removed" type="int" 
+						defaultValue="30" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+		</parameters>
 
 

@@ -26,6 +26,7 @@ public class Environment {
 		this.initialSickMale= params.getDouble("initialSickMale");
 		this.vaccinatedInfectionRate = params.getDouble("vaccinatedInfectionRate");
 		this.naturalDeathRate = params.getDouble("naturalDeathRate");
+		this.deadRemove = params.getInteger("deadRemove");
 	}
 
 
@@ -59,6 +60,8 @@ public class Environment {
 	private double infectionMatingFactor;
 	private double vaccinatedInfectionRate;
 	private double naturalDeathRate;
+	//remove agent after x days
+	private int deadRemove;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -120,4 +123,9 @@ public class Environment {
 		return naturalDeathRate;
 	}
 
+	public int getDeadRemove() {
+		return deadRemove;
+	}
+
+	
 }

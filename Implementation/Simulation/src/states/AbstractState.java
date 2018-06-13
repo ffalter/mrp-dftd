@@ -1,11 +1,11 @@
 package states;
 
 import java.awt.Color;
-import java.util.Comparator;
 import java.util.List;
 
+
+import cern.jet.random.Normal;
 import controls.InteractionManager;
-import controls.TickParser;
 import repast.simphony.query.space.grid.GridCell;
 import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.random.RandomHelper;
@@ -94,7 +94,6 @@ public abstract class AbstractState {
 				//dead devil should be removed
 				nn.incrementDead(Integer.MAX_VALUE);
 			}
-			
 		}
 		//make devil one tick older
 		devil.incrementAge(1);
@@ -125,8 +124,8 @@ public abstract class AbstractState {
 			steprange /= 3;
 			devil.setInteracted(false);
 		}
-		//TODO maybe add something like gaussian distribution for the final distance from the home
-		space.moveByVector(devil, RandomHelper.nextDoubleFromTo(0, steprange), angle,0);
+		Normal distribution= RandomHelper.createNormal(steprange*0.5, steprange*0.3);
+		space.moveByVector(devil, distribution.nextInt(), angle,0);
 		NdPoint myPoint = space.getLocation(devil);
 		grid.moveTo(devil, (int) myPoint.getX(), (int) myPoint.getY());
 

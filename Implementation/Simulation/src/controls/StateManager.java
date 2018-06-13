@@ -38,7 +38,7 @@ public class StateManager {
 		// despawn corpse after 30 days
 		if(devil.getDead() > 0) {
 			devil.incrementDead(1);
-			if(TickParser.getCompleteDaysFromTicks(devil.getDead()) > 30) {
+			if(TickParser.getCompleteDaysFromTicks(devil.getDead()) > Environment.getInstance().getDeadRemove()) {
 				context.remove(devil);
 			}
 		}else if(TickParser.getYearsFromTicks(devil.getAge()) >= 5) {

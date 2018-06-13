@@ -111,8 +111,9 @@ public class BirthManager {
 	private void giveBirth(int numberOfNewPregnantAnimals, ArrayList<TasmanianDevil> possibleMothers)
 	{
 		//System.out.println("Give birth to "+ numberOfNewPregnantAnimals +" animals.");
-		while (numberOfNewPregnantAnimals != 0 && possibleMothers != null && possibleMothers.size() > numberOfNewPregnantAnimals)
+		while (numberOfNewPregnantAnimals != 0 && possibleMothers != null && possibleMothers.size() > numberOfNewPregnantAnimals && possibleMothers.size() > 0)
 		{
+			System.out.println(possibleMothers.size());
 			int index = random.nextInt(possibleMothers.size());
 			TasmanianDevil mother = possibleMothers.get(index);
 			for (int i = 0; i < sizeOfOffspring; i++)

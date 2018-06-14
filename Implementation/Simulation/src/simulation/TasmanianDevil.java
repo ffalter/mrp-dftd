@@ -50,17 +50,19 @@ public class TasmanianDevil {
 	
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState)
 	{
-		this(space, grid, false, startState);
+		this(space, grid, false, false, startState);
 	}
 	
-	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, boolean vaccinated, AbstractState startState) {
+	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, boolean vaccinatedDFT1,  boolean vaccinatedDFT2, AbstractState startState) {
 		this.space = space;
 		this.grid = grid;
 		this.age = 0;
 		this.sickDFT1 = 0;
 		this.sickDFT2 = 0;
-		if(vaccinated)
-			this.vaccinate();
+		if(vaccinatedDFT1)
+			this.vaccinateDFT1();
+		if(vaccinatedDFT2)
+			this.vaccinateDFT2();
 		this.currentState = startState;
 		this.interacted=false;
 	}
@@ -123,8 +125,12 @@ public class TasmanianDevil {
 		return vaccinatedDFT2;
 	}
 
-	public void vaccinate() {
+	public void vaccinateDFT1() {
 		vaccinatedDFT1 = true;
+	}
+	
+	public void vaccinateDFT2()
+	{
 		vaccinatedDFT2 = true;
 	}
 

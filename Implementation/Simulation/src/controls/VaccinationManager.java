@@ -40,10 +40,16 @@ public class VaccinationManager {
 	/** Devils that will be additionally vaccinated in this season*/
 	private int numToVaccinateThisSeason = 0;
 	
-	public VaccinationManager(Context<Object> context) {
+	/** True if vaccinates DFT1, false if vaccinates DFT2. */
+	private boolean DFT1;
+	
+	public VaccinationManager(Context<Object> context, boolean DFT1) {
 		startOfVaccinationSeason 	= 0;
 		durationOfVaccinationSeason = (int) TickParser.getTicksPerYear()-1;
-		willBeAddVaccinated 		= 5; //Environment.getInstance().getNumAddVaccinatedPerYear();
+		if(DFT1)
+			willBeAddVaccinated 		= 5; //Environment.getInstance().getNumAddVaccinatedDFT1PerYear();
+		else
+			willBeAddVaccinated 		= 5; //Environment.getInstance().getNumAddVaccinatedDFT2PerYear();
 		this.context = context;
 	}
 
@@ -114,7 +120,10 @@ public class VaccinationManager {
 			{
 				int index = random.nextInt(possiblyVaccinatedDevils.size());
 				TasmanianDevil vaccinateDevil = possiblyVaccinatedDevils.get(index);
-				vaccinateDevil.vaccinate();
+				if(DFT1)
+					vaccinateDevil.vaccinateDFT1();
+				else
+					vaccinateDevil.vaccinateDFT2();
 			}
 		}
 	}

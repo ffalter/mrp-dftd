@@ -1,0 +1,66 @@
+<repast.simphony.data2.engine.DataSetDescriptor simphonyVersion="2.5.0">
+  <name>dataset2</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>1773843006</hashCode>
+  </scheduleParams>
+  <atEnd>true</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>sick (not dead)</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>sick (not dead)</id>
+        <className>simulation.TasmanianDevil</className>
+        <methodName>sickNotDeadCounterHelper</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>dead (sick)</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>dead (sick)</id>
+        <className>simulation.TasmanianDevil</className>
+        <methodName>deadCounterHelper</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>infected</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>infected</id>
+        <className>simulation.TasmanianDevil</className>
+        <methodName>infectedNotInfectious</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>infected (infectious)</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>infected (infectious)</id>
+        <className>simulation.TasmanianDevil</className>
+        <methodName>infectedInfectious</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map">
+    <entry>
+      <string>total</string>
+      <repast.simphony.data2.engine.CountSourceDefinition>
+        <typeName>simulation.TasmanianDevil</typeName>
+        <id>total</id>
+      </repast.simphony.data2.engine.CountSourceDefinition>
+    </entry>
+  </countSources>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

@@ -215,4 +215,25 @@ public class TasmanianDevil {
 		}
 		return 0;
 	}
+
+	public int infectedNotInfectious() {
+		if ((sickDFT1 > 0 || sickDFT2 > 0) && (sickDFT1 < 180 && sickDFT2 < 180)) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int infectedInfectious() {
+		if (sickDFT1 > 180 || sickDFT2 > 180) {
+			return 1;
+		}
+		return 0;
+	}
+
+	public int sickNotDeadCounterHelper() {
+		if (dead <= 0 && currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
 }

@@ -8,6 +8,8 @@ import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.schedule.ScheduleParameters;
+import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.random.RandomHelper;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
@@ -33,6 +35,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		Environment.reset();
 		Environment params= Environment.getInstance();
 		
+		context.add(new TerminationControl(context));
 		/// run for a specific time 
 		//if(RunEnvironment.getInstance().isBatch()){
 	    RunEnvironment.getInstance().endAt(TickParser.getTicksPerYear()*params.getEndAfterYears());
@@ -154,5 +157,4 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		
 		return context;
 	}
-
 }

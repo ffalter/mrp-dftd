@@ -217,14 +217,14 @@ public class TasmanianDevil {
 	}
 
 	public int infectedNotInfectious() {
-		if ((sickDFT1 > 0 || sickDFT2 > 0) && (sickDFT1 < 180 && sickDFT2 < 180)) {
+		if ((sickDFT1 > 0 || sickDFT2 > 0) && (!isInfectiousDFT1() && !isInfectiousDFT2())) {
 			return 1;
 		}
 		return 0;
 	}
 	
 	public int infectedInfectious() {
-		if (sickDFT1 > 180 || sickDFT2 > 180) {
+		if (isInfectiousDFT1() || isInfectiousDFT2()) {
 			return 1;
 		}
 		return 0;
@@ -232,6 +232,47 @@ public class TasmanianDevil {
 
 	public int sickNotDeadCounterHelper() {
 		if (dead <= 0 && currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int femaleCounter() {
+		if(currentState.isFemaleState()) {
+			return 1;
+		}
+		return 0;
+	}
+	public int maleCounter() {
+		if(!currentState.isFemaleState()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int femaleSickCounter() {
+		if(currentState.isFemaleState()&&currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int maleSickCounter() {
+		if(!currentState.isFemaleState()&&currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int femaleHealthyCounter() {
+		if(currentState.isFemaleState()&&!currentState.isSickState()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int maleHealthyCounter() {
+		if(!currentState.isFemaleState()&&!currentState.isSickState()) {
 			return 1;
 		}
 		return 0;

@@ -92,7 +92,7 @@ public abstract class AbstractState {
 			devil.setInteractionPartner(null);
 			if(nn.getDead()>0) {
 				//dead devil should be removed
-				nn.incrementDead(Integer.MAX_VALUE);
+				nn.incrementDead(Environment.getInstance().getDeadRemove());
 			}
 		}
 		//make devil one tick older

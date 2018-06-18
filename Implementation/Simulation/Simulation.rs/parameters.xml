@@ -90,6 +90,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
+				<parameter name="endAfterYears" displayName="End Run after x years" type="int" 
+						defaultValue="10" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
 				<parameter name="stepRange" displayName="Step Range (default)" type="int" 
 						defaultValue="200" 
 						isReadOnly="false" 

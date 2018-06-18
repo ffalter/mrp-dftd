@@ -27,6 +27,7 @@ public class Environment {
 		this.vaccinatedInfectionRate = params.getDouble("vaccinatedInfectionRate");
 		this.naturalDeathRate = params.getDouble("naturalDeathRate");
 		this.deadRemove = params.getInteger("deadRemove");
+		this.endAfterYears = params.getInteger("endAfterYears");
 	}
 
 
@@ -62,6 +63,8 @@ public class Environment {
 	private double naturalDeathRate;
 	//remove agent after x days
 	private int deadRemove;
+	//end run after x years
+	private int endAfterYears;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -125,6 +128,10 @@ public class Environment {
 
 	public int getDeadRemove() {
 		return deadRemove;
+	}
+	
+	public int getEndAfterYears() {
+		return endAfterYears;
 	}
 
 	

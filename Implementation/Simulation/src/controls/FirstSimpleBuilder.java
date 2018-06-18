@@ -7,6 +7,7 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.random.RandomHelper;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
@@ -26,10 +27,17 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 	@Override
 	public Context<Object> build(Context<Object> context) {
+		
 		StateManager.initialize(context);
 		InteractionManager.getInstance();
 		Environment.reset();
 		Environment params= Environment.getInstance();
+		
+		/// run for a specific time 
+		//if(RunEnvironment.getInstance().isBatch()){
+	    RunEnvironment.getInstance().endAt(TickParser.getTicksPerYear()*params.getEndAfterYears());
+	    //}
+		
 		double age0 = 0.5735;
 		double age1 = 0.1195 + age0;
 		double age2 = 0.0992 + age1;
@@ -89,7 +97,6 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		}
 		//add male sick individuals
 		int femaleSickCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*params.getInitialSickFemale());
-		System.out.println("femalesick "+ femaleSickCount);
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
 			context.add(tmpDevil);
@@ -111,7 +118,6 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 		//add male healthy individuals
 		int femaleHealthyCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*(1-params.getInitialSickFemale()));
-		System.out.println("femalehealthy "+ femaleHealthyCount);
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
 			context.add(tmpDevil);

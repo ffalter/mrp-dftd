@@ -144,17 +144,31 @@ public class BirthManager {
 	private TasmanianDevil generateBabyDevil(TasmanianDevil mother)
 	{
 		double probabilityMale = random.nextDouble();
-		if(probabilityMale < percentagOfMaleOffspring)
-			if(mother.getCurrentState().isSickState())
-				return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleSickState());
-			else
-				return  new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleHealthyState());
-		else
-			if(mother.getCurrentState().isSickState())
-				return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleSickState());
-			else
-				return  new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleHealthyState());
-			
+		
+		if (probabilityMale < percentagOfMaleOffspring)
+			if (mother.getCurrentState().isSickState()) {
+				TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleSickState());
+				if (mother.getSickDFT1() > 0) {
+					offspring.incrementSickDFT1(1);
+				}
+				if (mother.getSickDFT2() > 0) {
+					offspring.incrementSickDFT2(1);
+				}
+				return offspring;
+			} else
+				return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleHealthyState());
+		else if (mother.getCurrentState().isSickState()) {
+			TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleSickState());
+			if (mother.getSickDFT1() > 0) {
+				offspring.incrementSickDFT1(1);
+			}
+			if (mother.getSickDFT2() > 0) {
+				offspring.incrementSickDFT2(1);
+			}
+			return offspring;
+		} else
+			return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleHealthyState());
+
 	}
 	
 }

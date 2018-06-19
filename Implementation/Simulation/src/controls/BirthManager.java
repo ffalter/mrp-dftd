@@ -45,7 +45,14 @@ public class BirthManager {
 	/** Offset from mating to generation of independent children */
 	private final int offsetFromMatingSeason = (int) (8 * 30 * TickParser.getTicksPerDay()); //tickManager.getTicksPerDay
 	
-	private int needToBePregnant = 0;
+	/** Number of mothers that should be pregnant after birth season.*/
+	private int needToBePregnantCountdown = 0;
+	
+	/** Number of mothers in total.*/
+	private int needToBePregnantTotal = 0;
+	
+	/** TODO */
+	private double pregnantScore = 0;
 	
 	public BirthManager(Context<Object> context) {
 		startOfBirthSeason 	  = (int)(Environment.getInstance().getMatingSeasonStartDay()*TickParser.getTicksPerDay()) + offsetFromMatingSeason; 
@@ -67,23 +74,30 @@ public class BirthManager {
 			ArrayList<TasmanianDevil> possibleMothers = getPossibleMothers();
 			int mothersCount=possibleMothers.size();
 			// if no children needs to be born, calculate new value for this season
-			if(needToBePregnant == 0)
+			if(needToBePregnantCountdown == 0)
 			{
-				needToBePregnant = (int) (mothersCount * percentageOfBirth) +1;
+				needToBePregnantTotal = (int) (mothersCount * percentageOfBirth) +1;
+				needToBePregnantCountdown = needToBePregnantTotal;
 				//System.out.println("Give birth to "+ needToBePregnant + "in total.");
+				
 			}
 			
 			// give birth on each day to average number of new children:
-			//int numberOfNewPregnantAnimals = (int) (needToBePregnant / durationOfBirthSeason);
-			int numberOfNewPregnantAnimals = RandomHelper.nextIntFromTo(0, ((int) (needToBePregnant / durationOfBirthSeason))+2);
+			pregnantScore += (double)(needToBePregnantTotal) / durationOfBirthSeason;
+			int numberOfNewPregnantAnimals = (int) (pregnantScore);
+			pregnantScore -= numberOfNewPregnantAnimals;
 			giveBirth(numberOfNewPregnantAnimals, possibleMothers);
-			needToBePregnant -= numberOfNewPregnantAnimals;
+			needToBePregnantCountdown -= numberOfNewPregnantAnimals;
 		}
-		else if(needToBePregnant!=0)
+		else
 		{
-			//spawn rest of animals
-			giveBirth(needToBePregnant, getPossibleMothers());
-			needToBePregnant=0;
+			if(needToBePregnantCountdown>0)
+			{
+				//spawn rest of animals
+				giveBirth(needToBePregnantCountdown, getPossibleMothers());
+				needToBePregnantCountdown=0;
+				pregnantScore = 0;
+			}
 		}
 	}
 	
@@ -110,7 +124,6 @@ public class BirthManager {
 
 	private void giveBirth(int numberOfNewPregnantAnimals, ArrayList<TasmanianDevil> possibleMothers)
 	{
-		//System.out.println("Give birth to "+ numberOfNewPregnantAnimals +" animals.");
 		while (numberOfNewPregnantAnimals != 0 && possibleMothers != null && possibleMothers.size() > numberOfNewPregnantAnimals && possibleMothers.size() > 0)
 		{
 			int index = random.nextInt(possibleMothers.size());

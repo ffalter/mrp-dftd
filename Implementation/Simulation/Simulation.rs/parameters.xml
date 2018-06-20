@@ -19,7 +19,7 @@
 									
 		/>
 				<parameter name="infectionRate" displayName="Infection Rate" type="double" 
-						defaultValue="1.0" 
+						defaultValue="0.3" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -66,6 +66,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
+				<parameter name="minPopulationSize" displayName="Terminate simulation if population size is below:" type="int" 
+						defaultValue="10" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
 				<parameter name="naturalDeathRate" displayName="Natural Death Rate" type="double" 
 						defaultValue="0.4" 
 						isReadOnly="false" 
@@ -85,7 +91,7 @@
 									
 		/>
 				<parameter name="tickValue" displayName="x ticks = 365 days" type="int" 
-						defaultValue="365" 
+						defaultValue="1000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -109,7 +115,7 @@
 									
 		/>
 				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
-						defaultValue="20" 
+						defaultValue="10" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

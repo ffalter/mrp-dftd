@@ -4,6 +4,7 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduleParameters;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import simulation.Environment;
 import simulation.TasmanianDevil;
 
 public class TerminationControl {
@@ -16,7 +17,7 @@ public class TerminationControl {
 	public void testForEnd() {
 		int totalPopulation = context.getObjects(TasmanianDevil.class).size();
 		// Stop the simulator
-		if (totalPopulation == 0) {
+		if (totalPopulation < Environment.getInstance().getMinPopulationSize()) {
 			RunEnvironment.getInstance().endRun();
 		}
 	}

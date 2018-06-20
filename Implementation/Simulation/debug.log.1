@@ -1,0 +1,819 @@
+ERROR [AWT-EventQueue-0] 2018-06-12 11:32:46,645 repast.simphony.ui.RSApplication - Error while initializing simulation
+repast.simphony.parameter.IllegalParameterException: Parameter 'infectionradius' not found in the schema.
+	at repast.simphony.parameter.DefaultParameters.getValue(DefaultParameters.java:213)
+	at repast.simphony.parameter.DefaultParameters.getInteger(DefaultParameters.java:242)
+	at simulation.FirstSimpleBuilder.setParams(FirstSimpleBuilder.java:65)
+	at simulation.FirstSimpleBuilder.build(FirstSimpleBuilder.java:24)
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+	at repast.simphony.ui.RSApplication.initSim(RSApplication.java:157)
+	at repast.simphony.ui.action.InitRun.actionPerformed(InitRun.java:17)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+ERROR [AWT-EventQueue-0] 2018-06-12 12:02:59,059 repast.simphony.ui.RSGui - Error while modifying parameters
+javax.xml.stream.XMLStreamException: ParseError at [row,col]:[57,70]
+Message: Wert des Attributs "displayName", das mit Elementtyp "parameter" verknüpft ist, darf nicht das Zeichen "<" enthalten.
+	at com.sun.org.apache.xerces.internal.impl.XMLStreamReaderImpl.next(Unknown Source)
+	at com.sun.xml.internal.stream.XMLEventReaderImpl.nextEvent(Unknown Source)
+	at repast.simphony.ui.parameters.ParametersUIParser.read(ParametersUIParser.java:64)
+	at repast.simphony.ui.parameters.ParametersUI.createPanel(ParametersUI.java:99)
+	at repast.simphony.ui.parameters.ParametersUI.updatePanel(ParametersUI.java:63)
+	at repast.simphony.ui.RSGui$ModifyParameterAction.actionPerformed(RSGui.java:428)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+FATAL [Thread-7] 2018-06-12 12:57:37,001 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at states.AbstractState.move(AbstractState.java:90)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleSickState.step(FemaleSickState.java:55)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:00:04,527 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at states.AbstractState.move(AbstractState.java:90)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:43)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:04:21,509 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at states.AbstractState.move(AbstractState.java:90)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:43)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:07:02,885 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at states.AbstractState.move(AbstractState.java:91)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:43)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:09:35,541 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.NullPointerException
+	at states.AbstractState.move(AbstractState.java:91)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleSickState.step(FemaleSickState.java:55)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:29:01,404 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.IllegalArgumentException: Displacement matrix has different number of dimensions than space
+	at repast.simphony.space.continuous.AbstractContinuousSpace.moveByVector(AbstractContinuousSpace.java:323)
+	at states.AbstractState.move(AbstractState.java:95)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleSickState.step(FemaleSickState.java:55)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+FATAL [Thread-7] 2018-06-12 13:31:33,457 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.IllegalArgumentException: Displacement matrix has different number of dimensions than space
+	at repast.simphony.space.continuous.AbstractContinuousSpace.moveByVector(AbstractContinuousSpace.java:323)
+	at states.AbstractState.move(AbstractState.java:95)
+	at states.AbstractState.doMainStep(AbstractState.java:80)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:43)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:70)
+	... 10 more
+ERROR [AWT-EventQueue-0] 2018-06-12 14:04:03,737 repast.simphony.ui.RSApplication - Error while initializing simulation
+repast.simphony.parameter.IllegalParameterException: Parameter 'initialSickmale' not found in the schema.
+	at repast.simphony.parameter.DefaultParameters.getValue(DefaultParameters.java:213)
+	at repast.simphony.parameter.DefaultParameters.getDouble(DefaultParameters.java:225)
+	at simulation.Environment.<init>(Environment.java:26)
+	at simulation.Environment.getInstance(Environment.java:32)
+	at controls.FirstSimpleBuilder.setParams(FirstSimpleBuilder.java:86)
+	at controls.FirstSimpleBuilder.build(FirstSimpleBuilder.java:28)
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+	at repast.simphony.ui.RSApplication.initSim(RSApplication.java:157)
+	at repast.simphony.ui.action.InitRun.actionPerformed(InitRun.java:17)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+FATAL [Thread-7] 2018-06-13 10:58:01,461 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.util.NoSuchElementException
+	at java.util.ArrayList$Itr.next(Unknown Source)
+	at states.AbstractState.getClosestDevil(AbstractState.java:158)
+	at states.AbstractState.doMainStep(AbstractState.java:79)
+	at states.MaleHealthyState.step(MaleHealthyState.java:24)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:72)
+	... 10 more
+FATAL [Thread-7] 2018-06-13 11:05:53,802 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (4.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
+	at controls.InteractionManager.<init>(InteractionManager.java:32)
+	at controls.InteractionManager.getInstance(InteractionManager.java:53)
+	at states.AbstractState.doMainStep(AbstractState.java:81)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:24)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:72)
+	... 10 more
+FATAL [Thread-7] 2018-06-13 11:09:55,903 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (1.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:333)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at simulation.TasmanianDevil$$FastClassByCGLIB$$c447b61d.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
+	at controls.InteractionManager.<init>(InteractionManager.java:32)
+	at controls.InteractionManager.getInstance(InteractionManager.java:53)
+	at states.AbstractState.doMainStep(AbstractState.java:81)
+	at states.FemaleHealthyState.step(FemaleHealthyState.java:24)
+	at simulation.TasmanianDevil.run(TasmanianDevil.java:72)
+	... 10 more
+INFO  [AWT-EventQueue-0] 2018-06-19 14:00:33,545 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:00:33,909 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [AWT-EventQueue-0] 2018-06-19 14:01:38,155 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:01:38,255 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:02:25,476 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally C:\Users\TIMORA~1\AppData\Local\Temp\Timo Raff_localhost2322636885813073953.zip to 
+C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529409738284 ...
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:02:25,525 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:02:25,527 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,1207
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:02:25,528 repast.simphony.batch.ssh.LocalSession - Unzipping model C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529409738284\Timo Raff_localhost2322636885813073953.zip
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:02:32,651 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [pool-3-thread-1] 2018-06-19 14:03:32,659 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529409738284 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:04:32,660 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529409738284 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:05:32,662 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529409738284 for DONE:  no
+INFO  [AWT-EventQueue-0] 2018-06-19 14:07:41,473 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:07:41,599 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:08:08,642 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally C:\Users\TIMORA~1\AppData\Local\Temp\Timo Raff_localhost780766305976946835.zip to 
+C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349 ...
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:08:08,709 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:08:08,711 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,1727
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:08:08,711 repast.simphony.batch.ssh.LocalSession - Unzipping model C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349\Timo Raff_localhost780766305976946835.zip
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:08:18,515 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [pool-2-thread-1] 2018-06-19 14:09:18,533 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349 for DONE:  no
+INFO  [pool-2-thread-1] 2018-06-19 14:10:18,559 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349 for DONE:  no
+INFO  [pool-2-thread-1] 2018-06-19 14:11:18,559 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349 for DONE:  yes
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:11:18,560 repast.simphony.batch.ssh.SessionsDriver - Run Time: 3,1641
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:11:18,586 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410078349
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:11:18,594 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into C:/Users/Timo Raff/Documents/GitHub/mrp-dftd/Implementation/Simulation/output
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:11:18,595 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0006
+INFO  [SwingWorker-pool-1-thread-1] 2018-06-19 14:11:18,595 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 3,3377
+INFO  [AWT-EventQueue-0] 2018-06-19 14:19:10,657 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:19:10,766 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:19:33,863 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally C:\Users\TIMORA~1\AppData\Local\Temp\Timo Raff_localhost2209233971106507933.zip to 
+C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527 ...
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:19:33,918 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:19:33,920 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,1399
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:19:33,920 repast.simphony.batch.ssh.LocalSession - Unzipping model C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527\Timo Raff_localhost2209233971106507933.zip
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:19:41,247 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [pool-3-thread-1] 2018-06-19 14:20:41,254 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:21:41,254 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:22:41,255 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527 for DONE:  yes
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:22:41,256 repast.simphony.batch.ssh.SessionsDriver - Run Time: 3,1223
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:22:41,282 repast.simphony.batch.ssh.LocalSession - Finding output on localhost in C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529410765527
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:22:41,300 repast.simphony.batch.ssh.SessionsDriver - Aggregating output into C:/Users/Timo Raff/Documents/GitHub/mrp-dftd/Implementation/Simulation/output
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:22:41,357 repast.simphony.batch.ssh.SessionsDriver - Get Output Time: 0,0017
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:22:41,358 repast.simphony.batch.ssh.SessionsDriver - Finished. Elapsed Time: 3,2640
+INFO  [AWT-EventQueue-0] 2018-06-19 14:26:02,794 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:26:02,900 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [AWT-EventQueue-0] 2018-06-19 14:28:21,282 repast.simphony.batch.gui.BatchConfigMediator - Writing batch run config file to: C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\output\config.props
+INFO  [AWT-EventQueue-0] 2018-06-19 14:28:21,391 repast.simphony.batch.gui.BatchConfigMediator - Unrolling batch parameter file:
+	C:\Users\Timo Raff\Documents\GitHub\mrp-dftd\Implementation\Simulation\batch\batch_params.xml to
+	C:\Users\TIMORA~1\AppData\Local\Temp\unrolledParamFile.txt
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:28:46,981 repast.simphony.batch.ssh.LocalSession - 
+	Copying locally C:\Users\TIMORA~1\AppData\Local\Temp\Timo Raff_localhost7645051295659014686.zip to 
+C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 ...
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:28:47,043 repast.simphony.batch.ssh.LocalSession - Copying Finished.
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:28:47,044 repast.simphony.batch.ssh.SessionsDriver - Initialization Time: 0,1535
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:28:47,045 repast.simphony.batch.ssh.LocalSession - Unzipping model C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835\Timo Raff_localhost7645051295659014686.zip
+INFO  [SwingWorker-pool-2-thread-1] 2018-06-19 14:28:53,934 repast.simphony.batch.ssh.LocalSession - Running model on localhost ...
+INFO  [pool-3-thread-1] 2018-06-19 14:29:53,961 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:30:53,981 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:31:53,986 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:32:54,002 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:33:54,012 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:34:54,015 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:35:54,034 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:36:54,035 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:37:54,063 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:38:54,070 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:39:54,086 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:40:54,090 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:41:54,111 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:42:54,121 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:43:54,122 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:44:54,135 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:45:54,139 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:46:54,149 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:47:54,157 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:48:54,194 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:49:54,196 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:50:54,204 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:51:54,209 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:52:54,217 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:53:54,219 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:54:54,231 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:55:54,234 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:56:54,239 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:57:54,249 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:58:54,257 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 14:59:54,267 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:00:54,272 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:01:54,283 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:02:54,293 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:03:54,304 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:04:54,330 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:05:54,345 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:06:54,349 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:07:54,356 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:08:54,368 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:09:54,374 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:10:54,383 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:11:54,404 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:12:54,416 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:13:54,426 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:14:54,431 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:15:54,432 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:16:54,435 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:17:54,446 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:18:54,456 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:19:54,465 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:20:54,470 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:21:54,476 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:22:54,492 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:23:54,509 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:24:54,519 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:25:54,531 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:26:54,541 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:27:54,546 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:28:54,552 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:29:54,555 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:30:54,563 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:31:54,581 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:32:54,592 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:33:54,615 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:34:54,628 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:35:54,630 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:36:54,642 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:37:54,653 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:38:54,674 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:39:54,686 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:40:54,701 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:41:54,721 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:42:54,727 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:43:54,728 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:44:54,732 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:45:54,740 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:46:54,756 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:47:54,758 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:48:54,780 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:49:54,790 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:50:54,801 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:51:54,809 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:52:54,823 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:53:54,828 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:54:54,841 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:55:54,848 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:56:54,849 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:57:54,862 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:58:54,876 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 15:59:54,891 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:00:54,894 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:01:54,896 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:02:54,902 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:03:54,904 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:04:54,914 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:05:54,926 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:06:54,936 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:07:54,942 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:08:54,944 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:09:54,951 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:10:54,966 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:11:54,979 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:12:54,982 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:13:54,995 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:14:55,001 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:15:55,001 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:16:55,015 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:17:55,015 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:18:55,020 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:19:55,021 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:20:55,026 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:21:55,037 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:22:55,043 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:23:55,048 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:24:55,065 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:25:55,070 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:26:55,071 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:27:55,081 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:28:55,085 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:29:55,104 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:30:55,109 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:31:55,120 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:32:55,122 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:33:55,144 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:34:55,147 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:35:55,158 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:36:55,183 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:37:55,189 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:38:55,191 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:39:55,193 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:40:55,204 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:41:55,215 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:42:55,219 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:43:55,242 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:44:55,247 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:45:55,250 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:46:55,255 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:47:55,259 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:48:55,284 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:49:55,293 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:50:55,298 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:51:55,310 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:52:55,312 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:53:55,312 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:54:55,320 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:55:55,322 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:56:55,331 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:57:55,333 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:58:55,354 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 16:59:55,360 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:00:55,367 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:01:55,372 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:02:55,378 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:03:55,403 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:04:55,403 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:05:55,423 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:06:55,425 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:07:55,432 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:08:55,434 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:09:55,436 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:10:55,449 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:11:55,464 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:12:55,485 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:13:55,492 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:14:55,507 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:15:55,521 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:16:55,525 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:17:55,532 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:18:55,549 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:19:55,551 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:20:55,562 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:21:55,577 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:22:55,579 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:23:55,589 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:24:55,605 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:25:55,608 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:26:55,618 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:27:55,638 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:28:55,652 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:29:55,657 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:30:55,664 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:31:55,667 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:32:55,683 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:33:55,683 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:34:55,688 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:35:55,696 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:36:55,721 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:37:55,725 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:38:55,736 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:39:55,739 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:40:55,743 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:41:55,758 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:42:55,758 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:43:55,766 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:44:55,780 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:45:55,787 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:46:55,805 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:47:55,829 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:48:55,845 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:49:55,847 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:50:55,854 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:51:55,855 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:52:55,859 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:53:55,862 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:54:55,865 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:55:55,868 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:56:55,870 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:57:55,881 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:58:55,884 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 17:59:55,886 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:00:55,890 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:01:55,896 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:02:55,899 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:03:55,908 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:04:55,910 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:05:55,919 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:06:55,926 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:07:55,942 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:08:55,945 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:09:55,949 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:10:55,975 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:11:55,976 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:12:55,992 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:13:56,003 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:14:56,005 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:15:56,019 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:16:56,024 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:17:56,031 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:18:56,056 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:19:56,060 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:20:56,066 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:21:56,077 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:22:56,090 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:23:56,101 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:24:56,101 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:25:56,126 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:26:56,137 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:27:56,141 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:28:56,143 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:29:56,149 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:30:56,165 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:31:56,180 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:32:56,203 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:33:56,222 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:34:56,248 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:35:56,264 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:36:56,268 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:37:56,272 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:38:56,275 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:39:56,283 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:40:56,298 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:41:56,301 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:42:56,311 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:43:56,325 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:44:56,326 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:45:56,345 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:46:56,346 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:47:56,360 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:48:56,369 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:49:56,371 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:50:56,388 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:51:56,395 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:52:56,403 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:53:56,404 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:54:56,423 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:55:56,432 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:56:56,441 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:57:56,449 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:58:56,458 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 18:59:56,461 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:00:56,478 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:01:56,485 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:02:56,508 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:03:56,531 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:04:56,552 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:05:56,559 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:06:56,572 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:07:56,581 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 19:08:56,590 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:26:42,011 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:27:42,026 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:28:42,051 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:29:42,065 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:30:42,072 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:31:42,085 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:32:42,098 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:33:42,099 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:34:42,110 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:35:42,112 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:36:42,114 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:37:42,135 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:38:42,149 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:39:42,153 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:40:42,157 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:41:42,182 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:42:42,182 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:43:42,187 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:44:42,191 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:45:42,203 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:46:42,215 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:47:42,218 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:48:42,225 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:49:42,228 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:50:42,252 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:51:42,260 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:52:42,271 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:53:42,283 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:54:42,284 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:55:42,289 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:56:42,292 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:57:42,292 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:58:42,311 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 20:59:42,334 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:00:42,338 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:01:42,345 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:02:42,356 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:03:42,364 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:04:42,372 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:05:42,397 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:06:42,411 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:07:42,417 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:08:42,418 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:09:42,422 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:10:42,448 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:11:42,472 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:12:42,474 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:13:42,475 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:14:42,478 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:15:42,493 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:16:42,495 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:17:42,505 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:18:42,513 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:19:42,517 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:20:42,519 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:21:42,523 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:22:42,531 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:23:42,545 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:24:42,551 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:25:42,559 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:26:42,564 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:27:42,568 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:28:42,574 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:29:42,592 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:30:42,601 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:31:42,622 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:32:42,636 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:33:42,647 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:34:42,664 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:35:42,692 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:36:42,693 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:37:42,702 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:38:42,715 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:39:42,729 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:40:42,733 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:41:42,755 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:42:42,756 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:43:42,768 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:44:42,781 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:45:42,787 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:46:42,791 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:47:42,794 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:48:42,797 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:49:42,802 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no
+INFO  [pool-3-thread-1] 2018-06-19 21:50:42,806 repast.simphony.batch.ssh.LocalDonePoller - Polled C:\Users\TIMORA~1\AppData\Local\Temp\simphony_model_1529411317835 for DONE:  no

@@ -28,6 +28,7 @@ public class Environment {
 		this.naturalDeathRate = params.getDouble("naturalDeathRate");
 		this.deadRemove = params.getInteger("deadRemove");
 		this.endAfterYears = params.getInteger("endAfterYears");
+		this.minPopulationSize = params.getInteger("minPopulationSize");
 	}
 
 
@@ -65,6 +66,7 @@ public class Environment {
 	private int deadRemove;
 	//end run after x years
 	private int endAfterYears;
+	private int minPopulationSize;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -132,6 +134,10 @@ public class Environment {
 	
 	public int getEndAfterYears() {
 		return endAfterYears;
+	}
+	
+	public int getMinPopulationSize(){
+		return minPopulationSize;
 	}
 
 	

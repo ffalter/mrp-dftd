@@ -90,6 +90,7 @@ public abstract class AbstractState {
 				devil.incrementSickDFT2(1);
 			}
 			devil.setInteractionPartner(null);
+			devil.setInteracted(true);
 			if(nn.getDead()>0) {
 				//dead devil should be removed
 				nn.incrementDead(Environment.getInstance().getDeadRemove());

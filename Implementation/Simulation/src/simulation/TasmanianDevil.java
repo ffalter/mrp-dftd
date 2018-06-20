@@ -48,6 +48,8 @@ public class TasmanianDevil {
 	
 	private boolean interacted;
 	
+	private int interactionCounter;
+	
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState)
 	{
 		this(space, grid, false, false, startState);
@@ -65,6 +67,7 @@ public class TasmanianDevil {
 			this.vaccinateDFT2();
 		this.currentState = startState;
 		this.interacted=false;
+		this.interactionCounter=0;
 	}
 	
 	/**
@@ -188,7 +191,9 @@ public class TasmanianDevil {
 	}
 	
 	public void setInteracted(boolean interacted) {
-		this.interacted=interacted;
+		if (interacted)
+			interactionCounter++;
+		this.interacted = interacted;
 	}
 	
 	public boolean hasInteracted() {
@@ -276,5 +281,9 @@ public class TasmanianDevil {
 			return 1;
 		}
 		return 0;
+	}
+	
+	public int interactionCounter() {
+		return interactionCounter;
 	}
 }

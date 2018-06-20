@@ -7,7 +7,7 @@
 									
 		/>
 				<parameter name="mapSizeY" displayName="Map Size Y direction" type="int" 
-						defaultValue="250" 
+						defaultValue="10000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -19,13 +19,13 @@
 									
 		/>
 				<parameter name="infectionRate" displayName="Infection Rate" type="double" 
-						defaultValue="0.3" 
+						defaultValue="0.5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
 				<parameter name="mapSizeX" displayName="Map Size X direction" type="int" 
-						defaultValue="250" 
+						defaultValue="10000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -37,7 +37,7 @@
 									
 		/>
 				<parameter name="infectionMatingFactor" displayName="Factor to increase Mating Infection" type="double" 
-						defaultValue="3.0" 
+						defaultValue="1.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -73,7 +73,7 @@
 									
 		/>
 				<parameter name="naturalDeathRate" displayName="Natural Death Rate" type="double" 
-						defaultValue="0.4" 
+						defaultValue="0.35" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -91,7 +91,7 @@
 									
 		/>
 				<parameter name="tickValue" displayName="x ticks = 365 days" type="int" 
-						defaultValue="1000" 
+						defaultValue="365" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -103,19 +103,19 @@
 									
 		/>
 				<parameter name="stepRange" displayName="Step Range (default)" type="int" 
-						defaultValue="200" 
+						defaultValue="2000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 				<parameter name="populationSize" displayName="Population Size" type="int" 
-						defaultValue="200" 
+						defaultValue="600" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
-						defaultValue="10" 
+						defaultValue="24" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

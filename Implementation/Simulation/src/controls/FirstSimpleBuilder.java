@@ -30,10 +30,11 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		
-		StateManager.initialize(context);
-		InteractionManager.getInstance();
 		Environment.reset();
 		Environment params= Environment.getInstance();
+		StateManager.initialize(context);
+		InteractionManager.reset();
+		InteractionManager.getInstance();
 		
 		context.add(new TerminationControl(context));
 		/// run for a specific time 

@@ -2,6 +2,7 @@ package simulation;
 
 import controls.StateManager;
 import controls.TickParser;
+import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
@@ -17,6 +18,8 @@ import states.AbstractState;
 public class TasmanianDevil {
 	/** This is the continuous space, the agents are interacting on.*/
 	private ContinuousSpace<Object> space;
+	
+	private Context<Object> context;
 	
 	/** This is the grid, the calculations will be based on.*/
 	private Grid<Object> grid;
@@ -50,12 +53,13 @@ public class TasmanianDevil {
 	
 	private int interactionCounter;
 	
-	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState)
+	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState, Context<Object> context)
 	{
-		this(space, grid, false, false, startState);
+		this(space, grid, false, false, startState, context);
 	}
 	
-	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, boolean vaccinatedDFT1,  boolean vaccinatedDFT2, AbstractState startState) {
+	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, boolean vaccinatedDFT1,  boolean vaccinatedDFT2, AbstractState startState, Context<Object> context) {
+		this.context= context;
 		this.space = space;
 		this.grid = grid;
 		this.age = 0;
@@ -82,6 +86,23 @@ public class TasmanianDevil {
 			throw new Exception("There is no state defined for this agent! Step cannot be evaluated");
 		currentState.step(this);
 		currentState = StateManager.getState(this);
+	}
+	
+	public TasmanianDevil getNeighborInRange() {
+		TasmanianDevil nearest= null;
+		double dist=-1; 
+		for (Object o : context.getObjects(TasmanianDevil.class)) {
+			if(o.equals(this)||((TasmanianDevil)o).hasInteracted())
+				continue;
+			if(dist ==-1||grid.getDistance(grid.getLocation(o), grid.getLocation(this))<dist) {
+			 nearest= (TasmanianDevil)o;
+			 dist= grid.getDistance(grid.getLocation(o), grid.getLocation(this));
+			}
+		}
+		if(dist<Environment.getInstance().getInteractionRadius()) {
+			return nearest;
+		}
+		return null;
 	}
 
 	public int getAge() {

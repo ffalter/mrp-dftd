@@ -76,48 +76,39 @@ public class InteractionManager {
 			gender2 = 1;
 		}
 
-		// !DFT1sick && DFT1vaccinated --> stateDFT1 = vaccinated
-		// !DFT2sick && DFT2vaccinated --> stateDFT2 = vaccinated
-		if(devil1.getSickDFT1() == 0) {
-			if(devil1.isVaccinatedDFT1()) {
-				state1dft1 = 1;
-			} else {
-				state1dft1 = 0;
-			}
-		} else {
-			state1dft1 = 2;
-		}
+
+		//first devil states
+		if(devil1.isInfectiousDFT1())
+			state1dft1=states.SICK.ordinal();
+		else if(devil1.isVaccinatedDFT1())
+				state1dft1=states.VACCINATED.ordinal();
+		else
+			state1dft1=states.HEALTHY.ordinal();
 		
-		if(devil1.getSickDFT2() == 0) {
-			if(devil1.isVaccinatedDFT2()) {
-				state1dft2 = 1;
-			} else {
-				state1dft2 = 0;
-			}
-		} else {
-			state1dft2 = 2;
-		}
-		
-		if(devil2.getSickDFT1() == 0 && devil2.getSickDFT2() == 0) {
-			if(devil2.isVaccinatedDFT1() || devil2.isVaccinatedDFT2()) {
-				state2dft1 = 1;
-				state2dft2 = 1;
-			} else {
-				state2dft1 = 0;
-				state2dft2 = 0;
-			}
-		} else if(devil2.isInfectiousDFT1() && devil2.isInfectiousDFT2()){
-			state2dft1 = 2;
-			state2dft2 = 2;
-		} else if(devil2.isInfectiousDFT1()) {
-			state2dft1 = 2;
-			state2dft2 = 0;
-		} else {
-			state2dft1 = 0;
-			state2dft2 = 2;
-		}
+		if(devil1.isInfectiousDFT2())
+			state1dft2=states.SICK.ordinal();
+		else if(devil1.isVaccinatedDFT2())
+				state1dft2=states.VACCINATED.ordinal();
+		else
+			state1dft2=states.HEALTHY.ordinal();
 		
 		
+		//second devil states
+
+		if(devil2.isInfectiousDFT1())
+			state2dft1=states.SICK.ordinal();
+		else if(devil2.isVaccinatedDFT1())
+				state2dft1=states.VACCINATED.ordinal();
+		else
+			state2dft1=states.HEALTHY.ordinal();
+		
+		if(devil2.isInfectiousDFT2())
+			state2dft2=states.SICK.ordinal();
+		else if(devil2.isVaccinatedDFT2())
+				state2dft2=states.VACCINATED.ordinal();
+		else
+			state2dft2=states.HEALTHY.ordinal();
+			
 		ret[0] = interactionMatrix[dft.DFT1.ordinal()][gender1][state1dft1][gender2][state2dft1];
 		ret[1] = interactionMatrix[dft.DFT2.ordinal()][gender1][state1dft2][gender2][state2dft2];
 		

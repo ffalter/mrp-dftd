@@ -147,7 +147,7 @@ public class BirthManager {
 		
 		if (probabilityMale < percentagOfMaleOffspring)
 			if (mother.getCurrentState().isSickState()) {
-				TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleSickState());
+				TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleSickState() ,context);
 				if (mother.getSickDFT1() > 0) {
 					offspring.incrementSickDFT1(1);
 				}
@@ -156,9 +156,9 @@ public class BirthManager {
 				}
 				return offspring;
 			} else
-				return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleHealthyState());
+				return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new MaleHealthyState(),context);
 		else if (mother.getCurrentState().isSickState()) {
-			TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleSickState());
+			TasmanianDevil offspring = new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleSickState(), context);
 			if (mother.getSickDFT1() > 0) {
 				offspring.incrementSickDFT1(1);
 			}
@@ -167,7 +167,7 @@ public class BirthManager {
 			}
 			return offspring;
 		} else
-			return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleHealthyState());
+			return new TasmanianDevil(mother.getSpace(), mother.getGrid(), new FemaleHealthyState(), context);
 
 	}
 	

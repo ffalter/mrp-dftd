@@ -61,7 +61,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 		int maleSickCount = (int)(params.getPopulationSize()*(1-params.getFemaleRatio())*params.getInitialSickMale());
 		for(int i = 0; i < maleSickCount; i++  ) {
-			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState());
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState(), context);
 			context.add(tmpDevil);
 			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<maleSickCount*age0) {
@@ -82,7 +82,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		//add male healthy individuals
 		int maleHealthyCount = (int)(params.getPopulationSize()*(1-params.getFemaleRatio())*(1-params.getInitialSickMale()));
 		for(int i = 0; i < maleHealthyCount; i++  ) {
-			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState());
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleHealthyState(), context);
 			context.add(tmpDevil);
 			if(i<maleHealthyCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
@@ -101,7 +101,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		//add male sick individuals
 		int femaleSickCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*params.getInitialSickFemale());
 		for(int i = 0; i < femaleSickCount; i++  ) {
-			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState());
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState(), context);
 			context.add(tmpDevil);
 			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<femaleSickCount*age0) {
@@ -122,7 +122,7 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		//add male healthy individuals
 		int femaleHealthyCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*(1-params.getInitialSickFemale()));
 		for(int i = 0; i < femaleHealthyCount; i++  ) {
-			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState());
+			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleHealthyState(), context);
 			context.add(tmpDevil);
 			if(i<femaleHealthyCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));

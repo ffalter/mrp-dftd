@@ -79,9 +79,9 @@ public abstract class AbstractState {
 		TasmanianDevil nn = devil.getInteractionPartner();
 		if(nn == null) {
 		nn = getClosestDevil(devil);
-		nn.setInteractionPartner(devil);
 		}
 		if (nn != null) {
+			nn.setInteractionPartner(devil);
 			double[] infectionProb = InteractionManager.getInstance().getInfectionProbability(devil, nn);
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
 				devil.incrementSickDFT1(1);
@@ -159,25 +159,26 @@ public abstract class AbstractState {
 	 * @return
 	 */
 	public TasmanianDevil getClosestDevil(TasmanianDevil devil) {
-		GridPoint currentPosition = devil.getGrid().getLocation(devil);
-		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.getGrid(), currentPosition, TasmanianDevil.class, Environment.getInstance().getInteractionRadius(),Environment.getInstance().getInteractionRadius());
-		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(true);
-		if (!gridCells.isEmpty()) {
-			double minDist= -1;
-			GridCell<TasmanianDevil> nearest=null;
-			for(GridCell<TasmanianDevil> cell : gridCells) {
-				double dist= devil.getGrid().getDistance(currentPosition, cell.getPoint());
-				if(dist <Environment.getInstance().getInteractionRadius() && ( minDist ==-1|| minDist>dist )) {
-					minDist = dist;
-					nearest = cell;
-				}
-			}
-			if (nearest != null) {
-				for (TasmanianDevil t : nearest.items()) {
-					return t;
-				}
-			}
-		}
-		return null;
+		return devil.getNeighborInRange();
+//		GridPoint currentPosition = devil.getGrid().getLocation(devil);
+//		GridCellNgh<TasmanianDevil> nghCreator = new GridCellNgh<TasmanianDevil>(devil.getGrid(), currentPosition, TasmanianDevil.class, Environment.getInstance().getInteractionRadius(),Environment.getInstance().getInteractionRadius());
+//		List<GridCell<TasmanianDevil>> gridCells = nghCreator.getNeighborhood(false);
+//		if (!gridCells.isEmpty()) {
+//			double minDist= -1;
+//			GridCell<TasmanianDevil> nearest=null;
+//			for(GridCell<TasmanianDevil> cell : gridCells) {
+//				double dist= devil.getGrid().getDistance(currentPosition, cell.getPoint());
+//				if(dist <Environment.getInstance().getInteractionRadius() && ( minDist ==-1|| minDist>dist )) {
+//					minDist = dist;
+//					nearest = cell;
+//				}
+//			}
+//			if (nearest != null) {
+//				for (TasmanianDevil t : nearest.items()) {
+//					return t;
+//				}
+//			}
+//		}
+//		return null;
 	}
 }

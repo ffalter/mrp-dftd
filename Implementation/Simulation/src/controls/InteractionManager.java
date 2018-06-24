@@ -65,15 +65,15 @@ public class InteractionManager {
 		int gender1,gender2,state1dft1,state1dft2,state2dft1,state2dft2;
 		
 		if(devil1.isFemale()) {
-			gender1 = 0;
+			gender1 = gender.FEMALE.ordinal();
 		} else {
-			gender1 = 1;
+			gender1 = gender.MALE.ordinal();
 		}
 		
 		if(devil2.isFemale()) {
-			gender2 = 0;
+			gender2 = gender.FEMALE.ordinal();
 		} else {
-			gender2 = 1;
+			gender2 = gender.MALE.ordinal();
 		}
 
 

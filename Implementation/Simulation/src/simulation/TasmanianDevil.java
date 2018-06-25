@@ -53,6 +53,9 @@ public class TasmanianDevil {
 	
 	private int interactionCounter;
 	
+	/** If devil has no resistance, the factor = 1, otherwise = parameter ResistanceFactor */
+	private double resistanceFactor;
+	
 	public TasmanianDevil(ContinuousSpace<Object> space, Grid<Object> grid, AbstractState startState, Context<Object> context)
 	{
 		this(space, grid, false, false, startState, context);
@@ -72,6 +75,7 @@ public class TasmanianDevil {
 		this.currentState = startState;
 		this.interacted=false;
 		this.interactionCounter=0;
+		this.resistanceFactor = 1;
 	}
 	
 	/**
@@ -320,5 +324,13 @@ public class TasmanianDevil {
 			return 1;
 		}
 		return 0;
+	}
+	
+	public double getResistanceFactor() {
+		return this.resistanceFactor;
+	}
+	
+	public void setResistanceFactor(double factor) {
+		this.resistanceFactor = factor;
 	}
 }

@@ -83,6 +83,8 @@ public abstract class AbstractState {
 		if (nn != null) {
 			nn.setInteractionPartner(devil);
 			double[] infectionProb = InteractionManager.getInstance().getInfectionProbability(devil, nn);
+			// consider possible resistance for DFT1
+			infectionProb[0] *= devil.getResistanceFactor();
 			if (RandomHelper.nextDoubleFromTo(0, 1) < infectionProb[0]) {
 				devil.incrementSickDFT1(1);
 			}

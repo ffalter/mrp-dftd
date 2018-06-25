@@ -307,4 +307,18 @@ public class TasmanianDevil {
 	public int interactionCounter() {
 		return interactionCounter;
 	}
+	
+	public int vaccinationCounter1() {
+		if(isVaccinatedDFT1()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	public int vaccinationCounter2() {
+		if(isVaccinatedDFT2()) {
+			return 1;
+		}
+		return 0;
+	}
 }

@@ -11,7 +11,8 @@ public class Environment {
 	private Environment() 
 	{
 		final Parameters params = RunEnvironment.getInstance().getParameters();
-		this.infectionRate = params.getDouble("infectionRate");
+		this.infectionRateDFT1 = params.getDouble("infectionRateDFT1");
+		this.infectionRateDFT2 = params.getDouble("infectionRateDFT2");
 		this.infectionMatingFactor = params.getDouble("infectionMatingFactor");
 		this.femaleRatio = params.getDouble("femaleRatio");
 		this.interactionRadius = params.getInteger("interactionRadius");
@@ -24,11 +25,14 @@ public class Environment {
 		this.matingSeasonEndDay = params.getInteger("matingSeasonEndDay");
 		this.initialSickFemale= params.getDouble("initialSickFemale");
 		this.initialSickMale= params.getDouble("initialSickMale");
-		this.vaccinatedInfectionRate = params.getDouble("vaccinatedInfectionRate");
+		this.vaccinatedInfectionRateDFT1 = params.getDouble("vaccinatedInfectionRateDFT1");
+		this.vaccinatedInfectionRateDFT2 = params.getDouble("vaccinatedInfectionRateDFT2");
 		this.naturalDeathRate = params.getDouble("naturalDeathRate");
 		this.deadRemove = params.getInteger("deadRemove");
 		this.endAfterYears = params.getInteger("endAfterYears");
 		this.minPopulationSize = params.getInteger("minPopulationSize");
+		this.numAddVaccinatedDFT1PerYear = params.getInteger("numAddVaccinatedDFT1PerYear");
+		this.numAddVaccinatedDFT2PerYear = params.getInteger("numAddVaccinatedDFT2PerYear");
 	}
 
 
@@ -57,16 +61,21 @@ public class Environment {
 	private int interactionRadius;
 
 	// probability of getting infected during interaction
-	private double infectionRate;
+	private double infectionRateDFT1;
+	private double infectionRateDFT2;
 	// probability of getting infected male - female (only during mating time)
 	private double infectionMatingFactor;
-	private double vaccinatedInfectionRate;
+	private double vaccinatedInfectionRateDFT1;
+	private double vaccinatedInfectionRateDFT2;
 	private double naturalDeathRate;
 	//remove agent after x days
 	private int deadRemove;
 	//end run after x years
 	private int endAfterYears;
 	private int minPopulationSize;
+	
+	private int numAddVaccinatedDFT1PerYear;
+	private int numAddVaccinatedDFT2PerYear;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -96,8 +105,12 @@ public class Environment {
 		return interactionRadius;
 	}
 
-	public double getInfectionRate() {
-		return infectionRate;
+	public double getInfectionRateDFT1() {
+		return infectionRateDFT1;
+	}
+	
+	public double getInfectionRateDFT2() {
+		return infectionRateDFT2;
 	}
 
 	public double getInfectionMatingFactor() {
@@ -120,8 +133,12 @@ public class Environment {
 		return initialSickMale;
 	}
 	
-	public double getVaccinatedInfectionRate() {
-		return vaccinatedInfectionRate;
+	public double getVaccinatedInfectionRateDFT1() {
+		return vaccinatedInfectionRateDFT1;
+	}
+	
+	public double getVaccinatedInfectionRateDFT2() {
+		return vaccinatedInfectionRateDFT2;
 	}
 	
 	public double getNaturalDeathRate() {
@@ -139,6 +156,13 @@ public class Environment {
 	public int getMinPopulationSize(){
 		return minPopulationSize;
 	}
-
+	
+	public int getNumAddVaccinatedDFT1PerYear() {
+		return numAddVaccinatedDFT1PerYear;
+	}
+	
+	public int getNumAddVaccinatedDFT2PerYear() {
+		return numAddVaccinatedDFT2PerYear;
+	}
 	
 }

@@ -13,15 +13,19 @@ public class InteractionManager {
 	
 	private double [][][][][] interactionMatrix;
 	
-	private double epsilon;
+	private double epsilon1;
+	private double epsilon2;
 	private double delta;
-	private double x;
+	private double x1;
+	private double x2;
 	
 	private InteractionManager()
 	{
-		epsilon = Environment.getInstance().getVaccinatedInfectionRate();
+		epsilon1 = Environment.getInstance().getVaccinatedInfectionRateDFT1();
+		epsilon2 = Environment.getInstance().getVaccinatedInfectionRateDFT2();
 		delta = Environment.getInstance().getInfectionMatingFactor();
-		x = Environment.getInstance().getInfectionRate();
+		x1 = Environment.getInstance().getInfectionRateDFT1();
+		x2 = Environment.getInstance().getInfectionRateDFT2();
 		interactionMatrix = new double [dft.DFT2.ordinal()+1][gender.MALE.ordinal()+1][states.SICK.ordinal()+1][gender.MALE.ordinal()+1][states.SICK.ordinal()+1];
 		
 		for (int df=0;df<dft.DFT2.ordinal()+1;df++) {
@@ -30,8 +34,13 @@ public class InteractionManager {
 					for(int gen2=0;gen2<gender.MALE.ordinal()+1;gen2++) {
 						for(int state2=0;state2<states.SICK.ordinal()+1;state2++) {
 							interactionMatrix[df][gen][states.SICK.ordinal()][gen2][state2] = 1;
-							interactionMatrix[df][gen][states.VACCINATED.ordinal()][gen2][states.SICK.ordinal()] = epsilon;
-							interactionMatrix[df][gen][states.HEALTHY.ordinal()][gen2][states.SICK.ordinal()] = x;
+							if(df == dft.DFT1.ordinal()) {
+								interactionMatrix[df][gen][states.HEALTHY.ordinal()][gen2][states.SICK.ordinal()] = x1;
+								interactionMatrix[df][gen][states.VACCINATED.ordinal()][gen2][states.SICK.ordinal()] = epsilon1;
+							} else {
+								interactionMatrix[df][gen][states.HEALTHY.ordinal()][gen2][states.SICK.ordinal()] = x2;
+								interactionMatrix[df][gen][states.VACCINATED.ordinal()][gen2][states.SICK.ordinal()] = epsilon2;
+							}
 							interactionMatrix[df][gen][states.VACCINATED.ordinal()][gen2][states.VACCINATED.ordinal()] = 0;
 							interactionMatrix[df][gen][states.HEALTHY.ordinal()][gen2][states.HEALTHY.ordinal()] = 0;
 							interactionMatrix[df][gen][states.VACCINATED.ordinal()][gen2][states.HEALTHY.ordinal()] = 0;

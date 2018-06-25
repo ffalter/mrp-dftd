@@ -47,9 +47,9 @@ public class VaccinationManager {
 		startOfVaccinationSeason 	= 0;
 		durationOfVaccinationSeason = (int) TickParser.getTicksPerYear()-1;
 		if(DFT1)
-			willBeAddVaccinated 		= 5; //Environment.getInstance().getNumAddVaccinatedDFT1PerYear();
+			willBeAddVaccinated 		= Environment.getInstance().getNumAddVaccinatedDFT1PerYear();
 		else
-			willBeAddVaccinated 		= 5; //Environment.getInstance().getNumAddVaccinatedDFT2PerYear();
+			willBeAddVaccinated 		= Environment.getInstance().getNumAddVaccinatedDFT2PerYear();
 		this.context = context;
 	}
 
@@ -60,6 +60,9 @@ public class VaccinationManager {
 	@ScheduledMethod(start = 1, interval = 1) // Call every iteration of the simulation
 	public void run() throws Exception
 	{
+		if(durationOfVaccinationSeason<=0)
+			return;
+		
 		int currentTick = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		if(isVaccinationInterval(currentTick))
 		{
@@ -74,7 +77,7 @@ public class VaccinationManager {
 				int numToVaccinatePerTick = numToVaccinateThisSeason/durationOfVaccinationSeason;
 				vaccinate(numToVaccinatePerTick, getPossibleVaccinatedAnimals());
 				numToVaccinateThisSeason -= numToVaccinatePerTick;
-			}else
+			}else if (numToVaccinateThisSeason > 0)
 			{
 				//calc tick interval that vaccinates a devil
 				int tickInterval= durationOfVaccinationSeason / numToVaccinateThisSeason;

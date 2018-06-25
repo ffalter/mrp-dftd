@@ -152,9 +152,11 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 		BirthManager birthManager = new BirthManager(context);
 		context.add(birthManager);
-		
-		VaccinationManager vaccinationManager = new VaccinationManager(context,false);
-		context.add(vaccinationManager);
+
+		VaccinationManager vaccinationManagerDFT1 = new VaccinationManager(context,true);
+		context.add(vaccinationManagerDFT1);
+		VaccinationManager vaccinationManagerDFT2 = new VaccinationManager(context,false);
+		context.add(vaccinationManagerDFT2);
 		
 		return context;
 	}

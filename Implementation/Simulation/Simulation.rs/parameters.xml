@@ -18,7 +18,13 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="infectionRate" displayName="Infection Rate" type="double" 
+				<parameter name="infectionRateDFT1" displayName="Infection Rate DFT1" type="double" 
+						defaultValue="0.05" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="infectionRateDFT2" displayName="Infection Rate DFT2" type="double" 
 						defaultValue="0.05" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -42,7 +48,13 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
-				<parameter name="vaccinatedInfectionRate" displayName="Vaccinated Infection Rate" type="double" 
+				<parameter name="vaccinatedInfectionRateDFT1" displayName="Vaccinated Infection Rate DFT1" type="double" 
+						defaultValue="0.001" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="vaccinatedInfectionRateDFT2" displayName="Vaccinated Infection Rate DFT2" type="double" 
 						defaultValue="0.001" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -113,6 +125,16 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
+		/>
+				<parameter name="numAddVaccinatedDFT1PerYear" displayName="Num Add Vaccinated DFT1 Per Year" type="int" 
+						defaultValue="24" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"							
+		/>
+				<parameter name="numAddVaccinatedDFT2PerYear" displayName="Num Add Vaccinated DFT2 Per Year" type="int" 
+						defaultValue="24" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"							
 		/>
 		</parameters>
 

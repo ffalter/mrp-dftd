@@ -54,12 +54,6 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="birthrate" displayName="Birthrate" type="double" 
-						defaultValue="0.005" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-									
-		/>
 				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
 						defaultValue="0.2" 
 						isReadOnly="false" 
@@ -103,19 +97,19 @@
 									
 		/>
 				<parameter name="stepRange" displayName="Step Range (default)" type="int" 
-						defaultValue="1000" 
+						defaultValue="2000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 				<parameter name="populationSize" displayName="Population Size" type="int" 
-						defaultValue="200" 
+						defaultValue="600" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
 				<parameter name="interactionRadius" displayName="Interaction Radius" type="int" 
-						defaultValue="40" 
+						defaultValue="24" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

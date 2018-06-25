@@ -19,7 +19,7 @@
 									
 		/>
 				<parameter name="infectionRate" displayName="Infection Rate" type="double" 
-						defaultValue="0.5" 
+						defaultValue="0.05" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -52,12 +52,6 @@
 						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-									
-		/>
-				<parameter name="birthrate" displayName="Birthrate" type="double" 
-						defaultValue="0.005" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
 				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
@@ -109,7 +103,7 @@
 									
 		/>
 				<parameter name="populationSize" displayName="Population Size" type="int" 
-						defaultValue="600" 
+						defaultValue="1000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									

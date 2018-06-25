@@ -136,6 +136,16 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"							
 		/>
+				<parameter name="resistanceGainRate" displayName="Rate Of Offspring Gaining Resistance" type="double" 
+						defaultValue="0.02" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
+		/>
+				<parameter name="resistanceFactor" displayName="Resistance Factor Multiplying Infection Rate" type="double" 
+						defaultValue="0.65" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
+		/>
 		</parameters>
 
 

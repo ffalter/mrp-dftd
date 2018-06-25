@@ -16,7 +16,6 @@ import states.AbstractState;
  *
  */
 public class TasmanianDevil {
-	//just a test
 	/** This is the continuous space, the agents are interacting on.*/
 	private ContinuousSpace<Object> space;
 	

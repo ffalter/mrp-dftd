@@ -62,9 +62,17 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 
 		int maleSickCount = (int)(params.getPopulationSize()*(1-params.getFemaleRatio())*params.getInitialSickMale());
 		for(int i = 0; i < maleSickCount; i++  ) {
-			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new MaleSickState(), context);
+			TasmanianDevil tmpDevil= new TasmanianDevil(space, grid, new MaleSickState(), context);
+			double rnd = RandomHelper.nextDoubleFromTo(0, 1);
+			if(rnd<params.getInitDftd1Infected()) {
+				tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}else if(rnd<(params.getInitDftd2Infected()+params.getInitDftd1Infected())) {
+				tmpDevil.incrementSickDFT2((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}else {
+				tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+				tmpDevil.incrementSickDFT2((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}
 			context.add(tmpDevil);
-			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<maleSickCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<maleSickCount*age1){
@@ -103,8 +111,16 @@ public class FirstSimpleBuilder implements ContextBuilder<Object> {
 		int femaleSickCount = (int)(params.getPopulationSize()*params.getFemaleRatio()*params.getInitialSickFemale());
 		for(int i = 0; i < femaleSickCount; i++  ) {
 			TasmanianDevil tmpDevil = new TasmanianDevil(space, grid, new FemaleSickState(), context);
+			double rnd = RandomHelper.nextDoubleFromTo(0, 1);
+			if(rnd<params.getInitDftd1Infected()) {
+				tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}else if(rnd<(params.getInitDftd2Infected()+params.getInitDftd1Infected())) {
+				tmpDevil.incrementSickDFT2((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}else {
+				tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+				tmpDevil.incrementSickDFT2((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
+			}
 			context.add(tmpDevil);
-			tmpDevil.incrementSickDFT1((int)(RandomHelper.nextIntFromTo(1, 380)*TickParser.getTicksPerDay()));
 			if(i<femaleSickCount*age0) {
 				tmpDevil.setAge((int)(RandomHelper.nextDoubleFromTo(0, 1)*TickParser.getTicksPerYear()));
 			}else if(i<femaleSickCount*age1){

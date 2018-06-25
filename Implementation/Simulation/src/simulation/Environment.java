@@ -35,6 +35,8 @@ public class Environment {
 		this.numAddVaccinatedDFT2PerYear = params.getInteger("numAddVaccinatedDFT2PerYear");
 		this.resistanceGainRate = params.getDouble("resistanceGainRate");
 		this.resistanceFactor = params.getDouble("resistanceFactor");
+		this.initDFTD1 = params.getDouble("initDftd1infected");
+		this.initDFTD2 = params.getDouble("initDftd2infected");
 	}
 
 
@@ -81,6 +83,9 @@ public class Environment {
 	
 	private double resistanceGainRate;
 	private double resistanceFactor;
+	
+	private double initDFTD1;
+	private double initDFTD2;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -178,4 +183,11 @@ public class Environment {
 		return resistanceFactor;
 	}
 	
+	public double getInitDftd1Infected() {
+		return initDFTD1;
+	}
+	
+	public double getInitDftd2Infected() {
+		return initDFTD2;
+	}
 }

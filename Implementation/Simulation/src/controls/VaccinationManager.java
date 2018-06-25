@@ -44,6 +44,7 @@ public class VaccinationManager {
 	private boolean DFT1;
 	
 	public VaccinationManager(Context<Object> context, boolean DFT1) {
+		this.DFT1 = DFT1;
 		startOfVaccinationSeason 	= 0;
 		durationOfVaccinationSeason = (int) TickParser.getTicksPerYear()-1;
 		if(DFT1)

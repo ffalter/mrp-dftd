@@ -37,6 +37,7 @@ public class Environment {
 		this.resistanceFactor = params.getDouble("resistanceFactor");
 		this.initDFTD1 = params.getDouble("initDftd1infected");
 		this.initDFTD2 = params.getDouble("initDftd2infected");
+		this.addHealthy = params.getInteger("addHealthy");
 	}
 
 
@@ -86,6 +87,8 @@ public class Environment {
 	
 	private double initDFTD1;
 	private double initDFTD2;
+	
+	private int addHealthy;
 	
 	public int getMapSizeX() {
 		return mapSizeX;
@@ -189,5 +192,9 @@ public class Environment {
 	
 	public double getInitDftd2Infected() {
 		return initDFTD2;
+	}
+	
+	public int getAddHealthy(){
+		return addHealthy;
 	}
 }

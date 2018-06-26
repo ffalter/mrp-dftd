@@ -6,7 +6,9 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.random.RandomHelper;
+import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.NdPoint;
+import repast.simphony.space.grid.Grid;
 import simulation.Environment;
 import simulation.TasmanianDevil;
 import states.FemaleHealthyState;
@@ -15,6 +17,8 @@ import states.MaleHealthyState;
 import states.MaleSickState;
 
 import java.util.Random;
+
+import org.apache.commons.math3.geometry.Space;
 
 public class BirthManager {
 
@@ -32,6 +36,12 @@ public class BirthManager {
 
 	/** Current context of the animals */
 	private Context<Object> context;
+	
+	/** currently used grid */
+	private Grid<Object> grid;
+	
+	/** currently used space */
+	private ContinuousSpace<Object> space;
 
 	/** Age which is needed to get offspring. */
 	private final int canGetOffspringAge = 2 * Environment.getInstance().getTicksPerYear(); // tickManager.getTicksPerYear;
@@ -54,13 +64,15 @@ public class BirthManager {
 	/** TODO */
 	private double pregnantScore = 0;
 
-	public BirthManager(Context<Object> context) {
+	public BirthManager(Context<Object> context, Grid<Object> grid, ContinuousSpace<Object> space) {
 		startOfBirthSeason = (int) (Environment.getInstance().getMatingSeasonStartDay() * TickParser.getTicksPerDay())
 				+ offsetFromMatingSeason;
 		durationOfBirthSeason = (int) ((Environment.getInstance().getMatingSeasonEndDay()
 				- Environment.getInstance().getMatingSeasonStartDay()) * TickParser.getTicksPerDay());
 		percentageOfBirth = 0.75; // TODO add to parameters
 		this.context = context;
+		this.grid= grid;
+		this.space= space;
 	}
 
 	/**
@@ -94,6 +106,27 @@ public class BirthManager {
 				needToBePregnantCountdown = 0;
 				pregnantScore = 0;
 			}
+		}
+		if(TickParser.getDayInYear((int)RunEnvironment.getInstance().getCurrentSchedule().getTickCount())%365==0) {
+			addHealthyIndividuals(Environment.getInstance().getAddHealthy());
+		}
+	}
+
+	private void addHealthyIndividuals(int num) {
+
+		for (int i = 0; i < num; i++) {
+			TasmanianDevil devil;
+			double rnd = RandomHelper.nextDouble();
+			if (rnd < Environment.getInstance().getFemaleRatio()) {
+				devil = new TasmanianDevil(space, grid, new FemaleHealthyState(), context);
+			} else {
+				devil = new TasmanianDevil(space, grid, new MaleHealthyState(), context);
+			}
+			devil.setAge((int) (RandomHelper.nextDoubleFromTo(1, 2) * TickParser.getTicksPerYear()));
+			context.add(devil);
+			NdPoint pt = space.getLocation(devil);
+			grid.moveTo(devil, (int) pt.getX(), (int) pt.getY());
+			devil.setHome(grid.getLocation(devil));
 		}
 	}
 

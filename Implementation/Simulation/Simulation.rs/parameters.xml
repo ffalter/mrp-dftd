@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
-					<parameter name="initialSickMale" displayName="percentage of sick male in the beginning" type="double" 
-						defaultValue="0.12" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-									
-		/>
-				<parameter name="mapSizeY" displayName="Map Size Y direction" type="int" 
+					<parameter name="mapSizeY" displayName="Map Size Y direction" type="int" 
 						defaultValue="10000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="matingSeasonEndDay" displayName="Mating Season End Day" type="int" 
-						defaultValue="91" 
+				<parameter name="mapSizeX" displayName="Map Size X direction" type="int" 
+						defaultValue="10000" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
+						defaultValue="0.2" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
 				<parameter name="infectionRateDFT1" displayName="Infection Rate DFT1" type="double" 
@@ -30,8 +30,62 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
-				<parameter name="mapSizeX" displayName="Map Size X direction" type="int" 
-						defaultValue="10000" 
+				<parameter name="naturalDeathRate" displayName="Natural Death Rate" type="double" 
+						defaultValue="0.35" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="matingSeasonStartDay" displayName="Mating Season Start Day" type="int" 
+						defaultValue="60" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="addHealthy" displayName="add x healthy individuals each year" type="int" 
+						defaultValue="0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="resistanceGainRate" displayName="Rate Of Offspring Gaining Resistance" type="double" 
+						defaultValue="0.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="endAfterYears" displayName="End Run after x years" type="int" 
+						defaultValue="10" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="resistanceFactor" displayName="Resistance Factor Multiplying Infection Rate" type="double" 
+						defaultValue="0.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="vaccinatedInfectionRateDFT2" displayName="Vaccinated Infection Rate DFT2" type="double" 
+						defaultValue="0.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="vaccinatedInfectionRateDFT1" displayName="Vaccinated Infection Rate DFT1" type="double" 
+						defaultValue="0.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="initialSickMale" displayName="percentage of sick male in the beginning" type="double" 
+						defaultValue="0.12" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="matingSeasonEndDay" displayName="Mating Season End Day" type="int" 
+						defaultValue="91" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -48,38 +102,26 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
-				<parameter name="vaccinatedInfectionRateDFT1" displayName="Vaccinated Infection Rate DFT1" type="double" 
-						defaultValue="0.001" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-									
-		/>
-				<parameter name="vaccinatedInfectionRateDFT2" displayName="Vaccinated Infection Rate DFT2" type="double" 
-						defaultValue="0.001" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-									
-		/>
 				<parameter name="deadRemove" displayName="x days until dead agents are removed" type="int" 
 						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="initialSickFemale" displayName="percentage of sick females in the beginning" type="double" 
-						defaultValue="0.2" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-									
-		/>
 				<parameter name="minPopulationSize" displayName="Terminate simulation if population size is below:" type="int" 
-						defaultValue="10" 
+						defaultValue="100" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="naturalDeathRate" displayName="Natural Death Rate" type="double" 
-						defaultValue="0.35" 
+				<parameter name="numAddVaccinatedDFT2PerYear" displayName="Num Add Vaccinated DFT2 Per Year" type="int" 
+						defaultValue="0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="initDftd1infected" displayName="Percentage of only DFTD1 infected devils" type="double" 
+						defaultValue="0.7" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
@@ -90,8 +132,8 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="matingSeasonStartDay" displayName="Mating Season Start Day" type="int" 
-						defaultValue="60" 
+				<parameter name="numAddVaccinatedDFT1PerYear" displayName="Num Add Vaccinated DFT1 Per Year" type="int" 
+						defaultValue="0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
@@ -102,10 +144,10 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="endAfterYears" displayName="End Run after x years" type="int" 
-						defaultValue="10" 
+				<parameter name="initDftd2infected" displayName="Percentage of only DFTD2 infected devils" type="double" 
+						defaultValue="0.2" 
 						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 									
 		/>
 				<parameter name="stepRange" displayName="Step Range (default)" type="int" 
@@ -125,36 +167,6 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
-		/>
-				<parameter name="numAddVaccinatedDFT1PerYear" displayName="Num Add Vaccinated DFT1 Per Year" type="int" 
-						defaultValue="24" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"							
-		/>
-				<parameter name="numAddVaccinatedDFT2PerYear" displayName="Num Add Vaccinated DFT2 Per Year" type="int" 
-						defaultValue="24" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"							
-		/>
-				<parameter name="resistanceGainRate" displayName="Rate Of Offspring Gaining Resistance" type="double" 
-						defaultValue="0.02" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
-		/>
-				<parameter name="resistanceFactor" displayName="Resistance Factor Multiplying Infection Rate" type="double" 
-						defaultValue="0.65" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
-		/>
-				<parameter name="initDftd1infected" displayName="Percentage of only DFTD1 infected devils" type="double" 
-						defaultValue="0.7"
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
-		/>
-				<parameter name="initDftd2infected" displayName="Percentage of only DFTD2 infected devils" type="double" 
-						defaultValue="0.2" 	
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"							
 		/>
 		</parameters>
 

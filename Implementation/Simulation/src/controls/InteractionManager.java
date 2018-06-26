@@ -85,16 +85,15 @@ public class InteractionManager {
 			gender2 = gender.MALE.ordinal();
 		}
 
-
 		//first devil states
-		if(devil1.isInfectiousDFT1())
+		if(devil1.getSickDFT1() > 0)
 			state1dft1=states.SICK.ordinal();
 		else if(devil1.isVaccinatedDFT1())
 				state1dft1=states.VACCINATED.ordinal();
 		else
 			state1dft1=states.HEALTHY.ordinal();
 		
-		if(devil1.isInfectiousDFT2())
+		if(devil1.getSickDFT2() > 0)
 			state1dft2=states.SICK.ordinal();
 		else if(devil1.isVaccinatedDFT2())
 				state1dft2=states.VACCINATED.ordinal();
